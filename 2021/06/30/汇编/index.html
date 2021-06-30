@@ -6,15 +6,17 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://example.com">
-  <title>Archives: 2021/6 | XTG111的杂记</title>
+  <title>汇编 | XTG111的杂记</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="一个机械学生的计算机学习">
-<meta property="og:type" content="website">
-<meta property="og:title" content="XTG111的杂记">
-<meta property="og:url" content="http://example.com/archives/2021/06/index.html">
+  <meta name="description" content="只是学学不详细">
+<meta property="og:type" content="article">
+<meta property="og:title" content="汇编">
+<meta property="og:url" content="http://example.com/2021/06/30/%E6%B1%87%E7%BC%96/index.html">
 <meta property="og:site_name" content="XTG111的杂记">
-<meta property="og:description" content="一个机械学生的计算机学习">
+<meta property="og:description" content="只是学学不详细">
 <meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2021-06-30T02:42:43.000Z">
+<meta property="article:modified_time" content="2021-06-30T02:47:11.757Z">
 <meta property="article:author" content="XTG111">
 <meta name="twitter:card" content="summary">
   
@@ -152,265 +154,256 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-  
+            <article id="post-汇编" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
     
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2021" class="archive-year">2021</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2021/06/30/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0-%E6%B5%99%E5%A4%A7/" class="archive-article-date">
-  	<time datetime="2021-06-30T02:42:53.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-06-30</time>
-</a>
-        </div>
-    	 
+      <header class="article-header">
+        
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2021/06/30/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0-%E6%B5%99%E5%A4%A7/">机器学习-浙大</a>
+    <h1 class="article-title" itemprop="name">
+      汇编
     </h1>
   
 
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2021/06/30/%E6%B1%87%E7%BC%96/" class="archive-article-date">
+        
+        <a href="/2021/06/30/%E6%B1%87%E7%BC%96/" class="archive-article-date">
   	<time datetime="2021-06-30T02:42:43.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-06-30</time>
 </a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2021/06/30/%E6%B1%87%E7%BC%96/">汇编</a>
-    </h1>
-  
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>只是学学不详细</p>
+<span id="more"></span>
 
-        <div class="article-info info-on-right">
-          
-          
+<h1 id="汇编"><a href="#汇编" class="headerlink" title="汇编"></a>汇编</h1><h3 id="通用寄存器"><a href="#通用寄存器" class="headerlink" title="通用寄存器"></a>通用寄存器</h3><p>32位    16位    8位<br>EAX        AX        AL<br>ECX        CX        CL<br>EDX        DX        DL<br>EBX        BX        BL<br>ESP        SP        AH<br>EBP        BP        CH<br>ESI        SI        DH<br>EDI        DI        BH</p>
+<p>MOV指令<br>1.立即数到寄存器    mov eax,1<br>2.寄存器到立即数    mov eax,edx</p>
+<h3 id="内存"><a href="#内存" class="headerlink" title="内存"></a>内存</h3><p>mov指令<br>1.立即数到内存<br>    1.一个字节        mov byte ptr ds:[地址编号],1<br>    2.2个字节        mov word ptr ds:[地址编号],ax<br>    3.4个字节        mov dword ptr ds:[地址编号],0x12345678</p>
+<p>2.寄存器到内存<br>    mov dword ptr ds:[地址编号],eax</p>
+<p>3.内存到寄存器<br>    mov eax,dword ptr ds:[地址编号]</p>
+<h3 id="内存地址的5种形式"><a href="#内存地址的5种形式" class="headerlink" title="内存地址的5种形式"></a>内存地址的5种形式</h3><p>1.立即数<br>    mov dword ptr ds:[0x13FFC4],eax<br>    mov eax,dword ptr ds:[0x13FFC4]</p>
+<p>2.[reg] reg表示8个32位通用寄存器中的一个</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">mov ecx,0x13FFD0</span><br><span class="line">mov eax,dword ptr ds:[ecx]</span><br></pre></td></tr></table></figure>
 
+<pre><code>mov edx,0x13FFD8
+mov dword ptr ds:[edx],0x87654321
+</code></pre>
+<p>前提是该寄存器的值为一个地址编号</p>
+<p>3.[reg+立即数]</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">mov ecx,0x13FFD0</span><br><span class="line">mov eax,dword ptr ds:[ecx+4]</span><br></pre></td></tr></table></figure>
+
+<pre><code>mov edx,0x13FFD8
+mov dword ptr ds:[edx+0xC],0x87654321 
+</code></pre>
+<p>前提是该寄存器加上一个立即数的值为一个地址编号</p>
+<p>4.[reg+reg*{1,2,4,8}]<br>    *</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">*mov eax,13FFC4</span><br><span class="line">	mov ecx,2</span><br><span class="line">	mov edx,dword ptr ds:[eax+ecx*4]</span><br></pre></td></tr></table></figure>
+
+<pre><code>mov eax,13FFC4
+mov ecx,2
+mov dword ptr ds:[eax+ecx*4],87654321
+</code></pre>
+<p>前提是eax+ecx*4的值为一个地址编号</p>
+<p>5.[reg+reg*{1,2,4,8}+立即数]</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">mov eax,13FFC4</span><br><span class="line">	mov ecx,2</span><br><span class="line">	mov edx,dword ptr ds:[eax+ecx*4+4]</span><br></pre></td></tr></table></figure>
+
+<pre><code>mov eax,13FFC4
+mov ecx,2
+mov dword ptr ds:[eax+ecx*4+4],87654321
+</code></pre>
+<h3 id="存储模式"><a href="#存储模式" class="headerlink" title="存储模式"></a>存储模式</h3><p>大端模式:数据高位在低位，数据低位在高位<br>小端模式:数据低位在低位，数据高位在高位</p>
+<p>db 地址: 以一个字节显示内存地址的内容<br>dw 地址: 以两个字节显示内存地址的内容<br>dd 地址: 以四个字节显示内存地址的内容</p>
+<h3 id="汇编指令"><a href="#汇编指令" class="headerlink" title="汇编指令"></a>汇编指令</h3><p>r 通用寄存器   m 内存   imm 代表立即数   r8 代表8位通用寄存器   m8 代表8位内存<br>imm8 代表8位立即数</p>
+<h4 id="1-mov指令"><a href="#1-mov指令" class="headerlink" title="1.mov指令"></a>1.mov指令</h4><p>1.mov r/m8,r8<br>2.mov r/m16,r16<br>3.mov r/m32,r32<br>4.mov r8,r/m8<br>5.mov r16,r/m16<br>6.mov r32,r/m32<br>7.mov r8,imm8<br>8.mov r8,imm16<br>9.mov r8,imm32</p>
+<h4 id="2-add指令-加法"><a href="#2-add指令-加法" class="headerlink" title="2.add指令(加法)"></a>2.add指令(加法)</h4><p>1.add r/m8,imm8<br>2.add r/m16,imm16<br>3.add r/m32,imm32<br>4.add r/m16,imm8<br>5.add r/m32,imm8<br>6.add r/m8,r8<br>7.add r/m16,r16<br>8.add r/m32,r32<br>9.add r8,r/m8<br>10.add r16,r/m16<br>11.add r32,r/m32</p>
+<p>最后存在前面</p>
+<h4 id="3-sub指令-减法"><a href="#3-sub指令-减法" class="headerlink" title="3.sub指令(减法)"></a>3.sub指令(减法)</h4><p>1.sub r/m8,imm8<br>2.sub r/m16,imm16<br>3.sub r/m32,imm32<br>4.sub r/m16,imm8<br>5.sub r/m32,imm8<br>6.sub r/m8,r8<br>7.sub r/m16,r16<br>8.sub r/m32,r32<br>9.sub r8,r/m8<br>10.sub r16,r/m16<br>11.sub r32,r/m32</p>
+<h4 id="4-and指令-与运算"><a href="#4-and指令-与运算" class="headerlink" title="4.and指令(与运算)"></a>4.and指令(与运算)</h4><p>1.and r/m8,imm8<br>2.and r/m16,imm16<br>3.and r/m32,imm32<br>4.and r/m16,imm8<br>5.and r/m32,imm8<br>6.and r/m8,r8<br>7.and r/m16,r16<br>8.and r/m32,r32<br>9.and r8,r/m8<br>10.and r16,r/m16<br>11.and r32,r/m32</p>
+<h4 id="5-or指令-或运算"><a href="#5-or指令-或运算" class="headerlink" title="5.or指令(或运算)"></a>5.or指令(或运算)</h4><p>1.or r/m8,imm8<br>2.or r/m16,imm16<br>3.or r/m32,imm32<br>4.or r/m16,imm8<br>5.or r/m32,imm8<br>6.or r/m8,r8<br>7.or r/m16,r16<br>8.or r/m32,r32<br>9.or r8,r/m8<br>10.or r16,r/m16<br>11.or r32,r/m32</p>
+<h4 id="6-xor指令-异或运算"><a href="#6-xor指令-异或运算" class="headerlink" title="6.xor指令(异或运算)"></a>6.xor指令(异或运算)</h4><p>1.xor r/m8,imm8<br>2.xor r/m16,imm16<br>3.xor r/m32,imm32<br>4.xor r/m16,imm8<br>5.xor r/m32,imm8<br>6.xor r/m8,r8<br>7.xor r/m16,r16<br>8.xor r/m32,r32<br>9.xor r8,r/m8<br>10.xor r16,r/m16<br>11.xor r32,r/m32</p>
+<h4 id="7-not指令-非"><a href="#7-not指令-非" class="headerlink" title="7.not指令(非)"></a>7.not指令(非)</h4><p>1.not r/m8<br>2.not r/m16<br>3.not r/m32</p>
+<h4 id="8-movs指令-移动数据-内存-gt-内存"><a href="#8-movs指令-移动数据-内存-gt-内存" class="headerlink" title="8.movs指令:移动数据 内存-&gt;内存"></a>8.movs指令:移动数据 内存-&gt;内存</h4><p>==指定edi和esi==</p>
+<p>byte/word/dword<br>move byte ptr ds:[EDI],byte ptr ds:[esi]    movsb<br>move word ptr ds:[EDI],word ptr ds:[esi]    movsw<br>move dword ptr ds:[EDI],dword ptr ds:[esi]    movsd</p>
+<p>当d位为0时执行完一次edi和esi会自动加1(或2或4)<br>当d位为1时执行玩一次edi和esi会自动减1(或2或4)</p>
+<h4 id="9-stos指令"><a href="#9-stos指令" class="headerlink" title="9.stos指令"></a>9.stos指令</h4><p>将AL/AX/EAX的值存储到[edi]指定的内存单元<br>stos byte ptr ds:[EDI]        stosb<br>stos word ptr ds:[EDI]        stosw<br>stos dword ptr ds:[EDI]        stosd</p>
+<h4 id="10-rep指令"><a href="#10-rep指令" class="headerlink" title="10.rep指令"></a>10.rep指令</h4><p>按计数寄存器(ecx)指定的次数重复执行字符串指令</p>
+<h3 id="使用堆栈"><a href="#使用堆栈" class="headerlink" title="使用堆栈"></a>使用堆栈</h3><p>esp寄存器<br>esp寄存器存储的是此时堆栈所对应的位置</p>
+<h4 id="push指令"><a href="#push指令" class="headerlink" title="push指令"></a>push指令</h4><p>1.向堆栈中压入数据<br>2.修改栈顶指针esp寄存器<br>相当于<br>    move dword ptr ds:[],3<br>    sub esp,4<br>格式<br>1.push r32<br>2.push r16<br>3.push m16<br>4.push m32<br>5.push imm8/imm16/imm32</p>
+<p>若执行完之后想恢复到初始esp位置，直接add esp,n*对应的字节数</p>
+<h4 id="pop指令"><a href="#pop指令" class="headerlink" title="pop指令"></a>pop指令</h4><p>与push相反,取出栈顶指针此时指向的值,存到指定的位置,并将栈顶指针加对应的字节数<br>相当于<br>    move eax,dword ptr ss:[esp]<br>    add esp,4<br>格式<br>1.pop r32<br>2.pop r16<br>3.pop m16<br>4.pop m32</p>
+<h3 id="修改eip相关的指令"><a href="#修改eip相关的指令" class="headerlink" title="修改eip相关的指令"></a>修改eip相关的指令</h3><p>1.jmp指令<br>jmp 寄存器/立即数/内存   相当于 mov eip,寄存器/立即数/内存</p>
+<p>2.call指令(单步执行f7)<br>call 寄存器/立即数/内存<br>相当于<br>    push 下一行地址<br>    mov eip,寄存器/立即数/内存<br>与jmp的区别：在堆栈中存储call指令下一行地址</p>
+<p>3.ret指令<br>ret<br>相当于<br>add esp,4<br>mov eip,[esp-4]</p>
+<h3 id="断点"><a href="#断点" class="headerlink" title="断点"></a>断点</h3><p>f2或int 3</p>
+<h3 id="函数"><a href="#函数" class="headerlink" title="函数"></a>函数</h3><p>函数调用<br>1.jmp调用<br>2.call调用<br>两者区别主要是call可以主动将下一行地址压入堆栈中，通过ret即可返回</p>
+<p>传参<br>1.寄存器传参<br>2.堆栈传参</p>
+<h3 id="堆栈平衡"><a href="#堆栈平衡" class="headerlink" title="堆栈平衡"></a>堆栈平衡</h3><p>1.如果要返回父程序，则当我们在堆栈中进行堆栈的操作时，一定要保证在ret这条指令之前，<br>esp指向的是我们压入堆栈的地址</p>
+<p>2.如果通过堆栈传递参数了，那么在函数执行完毕后，要平衡参数导致的堆栈变化</p>
+<p>外平栈<br>在执行完之后的下一条语句加一个add esp</p>
+<p>内平栈<br>在ret 语句后加上一个移动的字节数 如 ret 8</p>
+<p>例子：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">push 1</span><br><span class="line">push 2</span><br><span class="line">call 00418413</span><br><span class="line">1.外平栈 add esp,8</span><br><span class="line">mov eax,dword ptr ds:[内存地址编号+8]</span><br><span class="line">add eax,dword ptr ds:[内存地址编号+4]</span><br><span class="line">2.内平栈 retn 8</span><br></pre></td></tr></table></figure>
+
+<h3 id="ebp寻址"><a href="#ebp寻址" class="headerlink" title="ebp寻址"></a>ebp寻址</h3><p>ebp栈底指针<br>ebp的值不会随着对堆栈的操作而改变，具体做法就是将ebp的指向指到esp的指向然后进行操作<br>    将ds改成ss</p>
+<p>例子：</p>
+<pre><code>push 1
+push 2
+call 00418413
+1.保存esp的地址
+push ebp
+mov ebp,esp
+
+sub esp 10
+mov eax, dword ptr ss[ebp-8]
+add eax, dword ptr ss[esp+C]
+
+2.移回esp、ebp的指向
+mov esp,ebp
+pop ebp
+
+retn 8
+</code></pre>
+<h3 id="JCC指令"><a href="#JCC指令" class="headerlink" title="JCC指令"></a>JCC指令</h3><p>修改eip指令，但是有条件依据标志寄存器来进行修改</p>
+<p>efl存储的内容是下面12个标志寄存器依照高位在前的顺序写出来的16进制形式</p>
+<h4 id="标志寄存器32个"><a href="#标志寄存器32个" class="headerlink" title="标志寄存器32个"></a>标志寄存器32个</h4><p>OF(11)：溢出标志<br>DF(10)：方向标志<br>IF(9)：中断使能标志<br>TF(8)：单步标志<br>SF(7)：符号标志<br>ZF(6)：零标志<br>0(5)<br>AF(4)：辅助进位标志<br>0(3)<br>PF(2)：奇偶标志<br>1(1)<br>CF(0)：进位标志</p>
+<h4 id="1-cf位-bit-0"><a href="#1-cf位-bit-0" class="headerlink" title="1.cf位(bit 0)"></a>1.cf位(bit 0)</h4><p>主要判断无符号数计算结果有没有溢出，若在最高有效位产生进位或借位则置为1，反之为0</p>
+<h4 id="2-pf位-bit-2"><a href="#2-pf位-bit-2" class="headerlink" title="2.pf位(bit 2)"></a>2.pf位(bit 2)</h4><p>主要进行奇偶校验，如果结果的最低有效字节包含偶数个数”1”则为，反之为0</p>
+<h4 id="3-af位-bit-4"><a href="#3-af位-bit-4" class="headerlink" title="3.af位(bit 4)"></a>3.af位(bit 4)</h4><p>如果算术操作在结果的第3位发生进位或借位则将该标志置为1，反之为0</p>
+<h4 id="4-zf位-bit-6"><a href="#4-zf位-bit-6" class="headerlink" title="4.zf位(bit 6)"></a>4.zf位(bit 6)</h4><p>若结果为0则置为1，反之为0<br>与cmp或者test一起用<br>cmp指令相当于sub指令，但并不把数据存储到第一个里<br>cmp指令相当于and指令，但并不把数据存储到第一个里</p>
+<h4 id="5-sf位-bit-7"><a href="#5-sf位-bit-7" class="headerlink" title="5.sf位(bit 7)"></a>5.sf位(bit 7)</h4><p>有符号整数的最高有效位，为正则为0，反之为1</p>
+<h4 id="6-of位-bit-11"><a href="#6-of位-bit-11" class="headerlink" title="6.of位(bit 11)"></a>6.of位(bit 11)</h4><p>反映有符号数加减运算结果是否溢出<br>即：无符号看CF，有符号看OF</p>
+<h4 id="7-df位-bit-10"><a href="#7-df位-bit-10" class="headerlink" title="7.df位(bit 10)"></a>7.df位(bit 10)</h4><p>方向标识位控制(movs,cmps,scas,lods,stos).设置DF标志使得串指令自动递减(又高向低处理字符串),禽畜该标志则使得串指令递增<br>std以及cld指令分别用于设置以及清除DF标志</p>
+<h1 id="微机原理"><a href="#微机原理" class="headerlink" title="微机原理"></a>微机原理</h1><h3 id=""><a href="#" class="headerlink" title=""></a></h3>
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=http://example.com/2021/06/30/%E6%B1%87%E7%BC%96/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2021/06/30/SQL-injection/" class="archive-article-date">
-  	<time datetime="2021-06-30T02:42:33.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-06-30</time>
-</a>
+<nav id="article-nav">
+  
+    <a href="/2021/06/30/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0-%E6%B5%99%E5%A4%A7/" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          机器学习-浙大
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2021/06/30/SQL-injection/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">SQL-injection</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
         </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2021/06/30/SQL-injection/">SQL-injection</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-          
-
+        
+        
+        <div class="toc-container tooltip-left">
+            <i class="icon-font icon-category"></i>
+            <div class="tooltip tooltip-east">
+                <span class="tooltip-item">
+                </span>
+                <span class="tooltip-content">
+                    <div class="toc-article">
+                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%B1%87%E7%BC%96"><span class="toc-number">1.</span> <span class="toc-text">汇编</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%80%9A%E7%94%A8%E5%AF%84%E5%AD%98%E5%99%A8"><span class="toc-number">1.0.1.</span> <span class="toc-text">通用寄存器</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%86%85%E5%AD%98"><span class="toc-number">1.0.2.</span> <span class="toc-text">内存</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%86%85%E5%AD%98%E5%9C%B0%E5%9D%80%E7%9A%845%E7%A7%8D%E5%BD%A2%E5%BC%8F"><span class="toc-number">1.0.3.</span> <span class="toc-text">内存地址的5种形式</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AD%98%E5%82%A8%E6%A8%A1%E5%BC%8F"><span class="toc-number">1.0.4.</span> <span class="toc-text">存储模式</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%B1%87%E7%BC%96%E6%8C%87%E4%BB%A4"><span class="toc-number">1.0.5.</span> <span class="toc-text">汇编指令</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1-mov%E6%8C%87%E4%BB%A4"><span class="toc-number">1.0.5.1.</span> <span class="toc-text">1.mov指令</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-add%E6%8C%87%E4%BB%A4-%E5%8A%A0%E6%B3%95"><span class="toc-number">1.0.5.2.</span> <span class="toc-text">2.add指令(加法)</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-sub%E6%8C%87%E4%BB%A4-%E5%87%8F%E6%B3%95"><span class="toc-number">1.0.5.3.</span> <span class="toc-text">3.sub指令(减法)</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#4-and%E6%8C%87%E4%BB%A4-%E4%B8%8E%E8%BF%90%E7%AE%97"><span class="toc-number">1.0.5.4.</span> <span class="toc-text">4.and指令(与运算)</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#5-or%E6%8C%87%E4%BB%A4-%E6%88%96%E8%BF%90%E7%AE%97"><span class="toc-number">1.0.5.5.</span> <span class="toc-text">5.or指令(或运算)</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#6-xor%E6%8C%87%E4%BB%A4-%E5%BC%82%E6%88%96%E8%BF%90%E7%AE%97"><span class="toc-number">1.0.5.6.</span> <span class="toc-text">6.xor指令(异或运算)</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#7-not%E6%8C%87%E4%BB%A4-%E9%9D%9E"><span class="toc-number">1.0.5.7.</span> <span class="toc-text">7.not指令(非)</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#8-movs%E6%8C%87%E4%BB%A4-%E7%A7%BB%E5%8A%A8%E6%95%B0%E6%8D%AE-%E5%86%85%E5%AD%98-gt-%E5%86%85%E5%AD%98"><span class="toc-number">1.0.5.8.</span> <span class="toc-text">8.movs指令:移动数据 内存-&gt;内存</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#9-stos%E6%8C%87%E4%BB%A4"><span class="toc-number">1.0.5.9.</span> <span class="toc-text">9.stos指令</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#10-rep%E6%8C%87%E4%BB%A4"><span class="toc-number">1.0.5.10.</span> <span class="toc-text">10.rep指令</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BD%BF%E7%94%A8%E5%A0%86%E6%A0%88"><span class="toc-number">1.0.6.</span> <span class="toc-text">使用堆栈</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#push%E6%8C%87%E4%BB%A4"><span class="toc-number">1.0.6.1.</span> <span class="toc-text">push指令</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#pop%E6%8C%87%E4%BB%A4"><span class="toc-number">1.0.6.2.</span> <span class="toc-text">pop指令</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BF%AE%E6%94%B9eip%E7%9B%B8%E5%85%B3%E7%9A%84%E6%8C%87%E4%BB%A4"><span class="toc-number">1.0.7.</span> <span class="toc-text">修改eip相关的指令</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%96%AD%E7%82%B9"><span class="toc-number">1.0.8.</span> <span class="toc-text">断点</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%87%BD%E6%95%B0"><span class="toc-number">1.0.9.</span> <span class="toc-text">函数</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%A0%86%E6%A0%88%E5%B9%B3%E8%A1%A1"><span class="toc-number">1.0.10.</span> <span class="toc-text">堆栈平衡</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#ebp%E5%AF%BB%E5%9D%80"><span class="toc-number">1.0.11.</span> <span class="toc-text">ebp寻址</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#JCC%E6%8C%87%E4%BB%A4"><span class="toc-number">1.0.12.</span> <span class="toc-text">JCC指令</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%A0%87%E5%BF%97%E5%AF%84%E5%AD%98%E5%99%A832%E4%B8%AA"><span class="toc-number">1.0.12.1.</span> <span class="toc-text">标志寄存器32个</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#1-cf%E4%BD%8D-bit-0"><span class="toc-number">1.0.12.2.</span> <span class="toc-text">1.cf位(bit 0)</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-pf%E4%BD%8D-bit-2"><span class="toc-number">1.0.12.3.</span> <span class="toc-text">2.pf位(bit 2)</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-af%E4%BD%8D-bit-4"><span class="toc-number">1.0.12.4.</span> <span class="toc-text">3.af位(bit 4)</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#4-zf%E4%BD%8D-bit-6"><span class="toc-number">1.0.12.5.</span> <span class="toc-text">4.zf位(bit 6)</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#5-sf%E4%BD%8D-bit-7"><span class="toc-number">1.0.12.6.</span> <span class="toc-text">5.sf位(bit 7)</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#6-of%E4%BD%8D-bit-11"><span class="toc-number">1.0.12.7.</span> <span class="toc-text">6.of位(bit 11)</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#7-df%E4%BD%8D-bit-10"><span class="toc-number">1.0.12.8.</span> <span class="toc-text">7.df位(bit 10)</span></a></li></ol></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%BE%AE%E6%9C%BA%E5%8E%9F%E7%90%86"><span class="toc-number">2.</span> <span class="toc-text">微机原理</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link"><span class="toc-number">2.0.1.</span> <span class="toc-text"></span></a></li></ol></li></ol></li></ol>
+                    </div>
+                </span>
+            </div>
         </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
+        
+    </div>
+</aside>
+
+
+
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2021/06/30/python%E4%B8%8Ehttp/" class="archive-article-date">
-  	<time datetime="2021-06-30T02:42:19.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-06-30</time>
-</a>
-        </div>
-    	 
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2021/06/30/python%E4%B8%8Ehttp/">python与http</a>
-    </h1>
   
 
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2021/06/30/php-study/" class="archive-article-date">
-  	<time datetime="2021-06-30T02:42:06.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-06-30</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2021/06/30/php-study/">php-study</a>
-    </h1>
   
 
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2021/06/30/numpy%E5%88%9D%E6%AD%A5%E5%AD%A6%E4%B9%A0/" class="archive-article-date">
-  	<time datetime="2021-06-30T02:41:54.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-06-30</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2021/06/30/numpy%E5%88%9D%E6%AD%A5%E5%AD%A6%E4%B9%A0/">numpy初步学习</a>
-    </h1>
   
 
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2021/06/30/mySQLstudy/" class="archive-article-date">
-  	<time datetime="2021-06-30T02:41:31.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-06-30</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2021/06/30/mySQLstudy/">mySQLstudy</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2021/06/30/Machine-Learning/" class="archive-article-date">
-  	<time datetime="2021-06-30T02:41:17.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-06-30</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2021/06/30/Machine-Learning/">Machine-Learning</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2021/06/30/hello-world/" class="archive-article-date">
-  	<time datetime="2021-06-30T01:30:19.605Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-06-30</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2021/06/30/hello-world/">Hello World</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-  
-    </div></section>
-  
-
-    
 
 
           </div>
@@ -433,8 +426,8 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
-		isArchive: true,
+		isPost: true,
+		isArchive: false,
 		isTag: false,
 		isCategory: false,
 		open_in_new: false,
