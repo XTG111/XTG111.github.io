@@ -164,7 +164,6 @@
       
         <p>MYSQL</p>
 <span id="more"></span>
-
 <h1 id="数据库"><a href="#数据库" class="headerlink" title="数据库"></a>数据库</h1><p>网络数据库、层级数据库、关系数据库</p>
 <p>数据库的另外一种区分方式：基于存储介质<br>存储介质：磁盘和内存<br>关系型数据库：存储在磁盘中<br>非关系型数据库：存储在内存中</p>
 <h1 id="关系数据库"><a href="#关系数据库" class="headerlink" title="关系数据库"></a>关系数据库</h1><p>建立在关系模型基础上的数据库表<br>关系模型：关系数据结构、关系操作集合、关系完整性约束</p>
@@ -215,7 +214,7 @@
 <h3 id="5-删除表结构"><a href="#5-删除表结构" class="headerlink" title="5.删除表结构"></a>5.删除表结构</h3><p>基本语法：drop table 表名[,表名2……];     可以同时删除多个数据表</p>
 <h1 id="数据基础操作"><a href="#数据基础操作" class="headerlink" title="数据基础操作"></a>数据基础操作</h1><h3 id="1-插入操作"><a href="#1-插入操作" class="headerlink" title="1.插入操作"></a>1.插入操作</h3><h4 id="1-基本语法："><a href="#1-基本语法：" class="headerlink" title="1.基本语法："></a>1.基本语法：</h4><p>insert into 表名 (字段列表) values (对应字段列表);<br>&lt;注&gt;<br>1.后面values中对应的值列表只需要与前面的字段列表对应即可，不需要与表的结构一致<br>2.字段列表并不一定非要有表中所有字段</p>
 <h4 id="2-基本语法：向表中所有字段插入数据"><a href="#2-基本语法：向表中所有字段插入数据" class="headerlink" title="2.基本语法：向表中所有字段插入数据"></a>2.基本语法：向表中所有字段插入数据</h4><p>insert into 表名 values (对应表结构)</p>
-<h3 id="2-查询操作"><a href="#2-查询操作" class="headerlink" title="2.查询操作"></a>2.查询操作</h3><p>1.查询表中全部数据<br>select * from 表名;        //*表示匹配所有字段</p>
+<h3 id="2-查询操作"><a href="#2-查询操作" class="headerlink" title="2.查询操作"></a>2.查询操作</h3><p>1.查询表中全部数据<br>select <em> from 表名;        //</em>表示匹配所有字段</p>
 <p>2.查询表中部分字段<br>select 字段列表 from 表名    //字段列表使用’,’隔开</p>
 <p>3.简单条件查询<br>select 字段列表/* from 表名 where 字段名 = 值;</p>
 <h3 id="3-删除操作"><a href="#3-删除操作" class="headerlink" title="3.删除操作"></a>3.删除操作</h3><p>delete from 表名 [where 条件];</p>
@@ -224,7 +223,7 @@
 <h3 id="设置客户端所有字符集"><a href="#设置客户端所有字符集" class="headerlink" title="设置客户端所有字符集"></a>设置客户端所有字符集</h3><p>快捷方式 set names 字符集;</p>
 <p>1.mysql客户端在进行数据操作之前将自己所使用的字符集告诉mysqld<br>2.cmd下mysql默认的只有一个字符集gbk<br>3.通过set names 字符集;来告诉mysqld要使用的字符集<br>4.再进行插入数据</p>
 <p>Mysql与mysqld之间处理的关系一共分为三层<br>客户端传入数据给服务端:client        character_set_client<br>服务端返回数据给客户端:server        character_set_results<br>客户端与服务端之间的连接:collection    character_set_collection</p>
-<p>set names 字符集的本质：就是一次性打通三层关系的字符集<br>在系统中有三个变量来记录着这三个关系对应的字符集：show variable like ‘character_set_%’;</p>
+<p>set names 字符集的本质：就是一次性打通三层关系的字符集<br>在系统中有三个变量来记录着这三个关系对应的字符集：show variable like ‘character<em>set</em>%’;</p>
 <p>修改服务器端变量的值<br>set 变量名=值;</p>
 <h1 id="列类型-字段类型"><a href="#列类型-字段类型" class="headerlink" title="列类型(字段类型)"></a>列类型(字段类型)</h1><h3 id="整数类型"><a href="#整数类型" class="headerlink" title="整数类型"></a>整数类型</h3><p>mysql默认为整数增加负数</p>
 <h4 id="1-Tinyint"><a href="#1-Tinyint" class="headerlink" title="1.Tinyint"></a>1.Tinyint</h4><p>迷你整形：系统采用一个字节来保存的整数;一个字节=8位，最大能表示的数值是0~255</p>
@@ -306,7 +305,7 @@
 <h3 id="更新数据"><a href="#更新数据" class="headerlink" title="更新数据"></a>更新数据</h3><p>1.在更新数据的时候，特别要注意，通常一定是跟随条件更新的<br>update 表名 set 字段名=新值 where 判断条件;</p>
 <p>2.如果没有条件是全表更新数据，但是可以使用limit来限制更新的数量<br>update 表名 set 字段名=新值 [where 判断条件] limit 限制数量;</p>
 <h3 id="删除数据"><a href="#删除数据" class="headerlink" title="删除数据"></a>删除数据</h3><p>1.删除数据时，尽量不要全部删除，要使用条件判断<br>2.删除数据时，使用limit限制删除数量</p>
-<p>delete删除数据时无法重置auto_increment<br>mysql有一个能够重置表选项中的自增长的语法<br>truncate 表名;    ==  drop –&gt; create</p>
+<p>delete删除数据时无法重置auto_increment<br>mysql有一个能够重置表选项中的自增长的语法<br>truncate 表名;    ==  drop —&gt; create</p>
 <h3 id="查询数据"><a href="#查询数据" class="headerlink" title="查询数据"></a>查询数据</h3><pre><code>完整的查询指令
 select selec选项 字段列表 from 数据源 where 条件 group by 分组 having 条件 order by 排序 limit 限制;
 
@@ -318,8 +317,7 @@ select selec选项 字段列表 from 数据源 where 条件 group by 分组 havi
     有的时候需要从多张表获取数据，再获取数据的时候，可能存在不同表中有同名的字段，需要将同名的字段命名为不同名的，别名alias
     基本语法：
         字段名 [as] 别名;
-</code></pre>
-<h4 id="from-数据源"><a href="#from-数据源" class="headerlink" title="from 数据源"></a>from 数据源</h4><p>from是为前面的查询提供 数据，数据源只要是一个符合二维表结构的数据即可</p>
+</code></pre><h4 id="from-数据源"><a href="#from-数据源" class="headerlink" title="from 数据源"></a>from 数据源</h4><p>from是为前面的查询提供 数据，数据源只要是一个符合二维表结构的数据即可</p>
 <h5 id="单表数据"><a href="#单表数据" class="headerlink" title="单表数据"></a>单表数据</h5><p>from 表名</p>
 <h5 id="多表数据"><a href="#多表数据" class="headerlink" title="多表数据"></a>多表数据</h5><p>from 表1,表2,……<br>结果：两张表的记录数相乘，字段数拼接<br>本质：从第一张表取出一条记录，去拼凑第二张表的所有记录，得到的结果为一个笛卡尔记录，应该尽量避免出现笛卡尔记录</p>
 <h5 id="动态数据"><a href="#动态数据" class="headerlink" title="动态数据"></a>动态数据</h5><p>from后面跟的数据不是一个实体表，而是一个从表中查询得到的二维结果表(子查询)<br>基本语法<br>from (select 字段列表 from 表) as 别名</p>
@@ -793,6 +791,6 @@ MathJax.Hub.Queue(function() {
             all[i].SourceElement().parentNode.className += ' has-jax';
     });
 </script>
-<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+<script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
 </body>
 </html>

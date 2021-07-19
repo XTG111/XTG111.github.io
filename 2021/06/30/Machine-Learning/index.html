@@ -162,17 +162,17 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>Machine Learning in Action</p>
-<span id="more"></span>
-
-<h1 id="机器学习"><a href="#机器学习" class="headerlink" title="机器学习"></a>机器学习</h1><h2 id="1-k-近邻算法"><a href="#1-k-近邻算法" class="headerlink" title="1.k-近邻算法"></a>1.k-近邻算法</h2><table>
+        <p>Machine Learning in Action<br><span id="more"></span></p>
+<h1 id="机器学习"><a href="#机器学习" class="headerlink" title="机器学习"></a>机器学习</h1><h2 id="1-k-近邻算法"><a href="#1-k-近邻算法" class="headerlink" title="1.k-近邻算法"></a>1.k-近邻算法</h2><div class="table-container">
+<table>
 <thead>
 <tr>
 <th></th>
 <th></th>
 </tr>
 </thead>
-<tbody><tr>
+<tbody>
+<tr>
 <td>优点</td>
 <td>精度高、对异常值不敏感，无数据输入假定</td>
 </tr>
@@ -184,7 +184,9 @@
 <td>适用数据范围</td>
 <td>数值型和标称型</td>
 </tr>
-</tbody></table>
+</tbody>
+</table>
+</div>
 <p> 工作原理：存在一个样本数据集合，也称作训练样本集，并且样本集中每个数据都存在标签，即已知样本集中每一数据与所属分类的对应关系。在输入新数据后，将新数据的每个特征与样本集中数据对应的特征进行比较，然后算法提取样本集中特征最相似数据(最近邻)的分类标签。</p>
 <p>k：只选择样本数据集中前k个最相似的数据，通常k是一个不超过20的整数，选择k个最相似数据中出现次数最多的分类，作为新数据的分类</p>
 <h3 id="k-近邻算法的一般流程"><a href="#k-近邻算法的一般流程" class="headerlink" title="k-近邻算法的一般流程"></a>k-近邻算法的一般流程</h3><p>1.收集数据：可以使用任何方法<br>        2.准备数据：距离计算所需要的数值，最好是结构化的数据格式<br>        3.分析数据：可以使用任何方法<br>        4.训练算法：此步骤不适用于k-近邻算法<br>        5.测试算法：计算错误率<br>        6.使用算法：首先需要输入样本数据和结构化的输出结果，然后运行k-近邻算法判定输入数据分别属于哪个分类，最后应用对计算出的分类执行后续的处理</p>
@@ -596,6 +598,6 @@ MathJax.Hub.Queue(function() {
             all[i].SourceElement().parentNode.className += ' has-jax';
     });
 </script>
-<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+<script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
 </body>
 </html>

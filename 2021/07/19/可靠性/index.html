@@ -164,7 +164,6 @@
       
         <p>可靠性</p>
 <span id="more"></span>
-
 <h1 id="可靠性"><a href="#可靠性" class="headerlink" title="可靠性"></a>可靠性</h1><p>产品在规定时间内和规定使用条件下完成其规定能力的能力</p>
 <ol>
 <li>产品：作为单独研究和分别实验对象的任何元件、零件、部件、机械设备和机组等</li>
@@ -176,17 +175,19 @@
 <h3 id="特征量"><a href="#特征量" class="headerlink" title="特征量"></a>特征量</h3><p>表示产品总体可靠性水平高低的各种可靠性数量指标称为可靠性特征量</p>
 <ol>
 <li><p>可靠度 R</p>
-<p>产品在规定的条件下和规定的时间t内，完成规定功能的概率<br>$$<br>R(t)=P(T&gt;t)=\int_{t}^{\infty}f(t)dt<br>$$</p>
-</li>
+<p>产品在规定的条件下和规定的时间t内，完成规定功能的概率</p>
+<script type="math/tex; mode=display">
+R(t)=P(T>t)=\int_{t}^{\infty}f(t)dt</script></li>
 </ol>
 <ul>
 <li>对于不可修复的产品，可靠度的观测值是指直到规定的时间终了为止，能完成规定功能的产品数与在该区间开始时刻投入工作产品数之比</li>
 <li>对于可修复产品，可靠度观测值是指一个或多个产品的无故障工作时间达到或超过规定的时间的次数与观察时间内无故障工作的总次数之比</li>
 </ul>
-<ol start="2">
+<ol>
 <li><p>累计失效概率 F</p>
-<p>产品在规定的条件下和规定的时间内未完成规定功能的概率<br>$$<br>F(t)=1-R(t)<br>$$</p>
-</li>
+<p>产品在规定的条件下和规定的时间内未完成规定功能的概率</p>
+<script type="math/tex; mode=display">
+F(t)=1-R(t)</script></li>
 <li><p>失效率(故障率)</p>
 <p>工作到某时刻尚未失效的产品，在该时刻后单位时间内失效的概率</p>
 </li>
@@ -200,24 +201,33 @@
 <li><p>可靠寿命和中位寿命</p>
 <ul>
 <li><p>可靠寿命是给定的可靠度所对应的时间。一般记为t(R)</p>
-<p>其观测值是能完成规定功能的产品的比例恰好等于给定可靠度所对应的时间<br>$$<br>t(R)={R(t)}^{-1}<br>$$</p>
-</li>
+<p>其观测值是能完成规定功能的产品的比例恰好等于给定可靠度所对应的时间</p>
+<script type="math/tex; mode=display">
+t(R)={R(t)}^{-1}</script></li>
 <li><p>中位寿命：当制定一个R值0.5，有t满足R(t)=F(t)=0.5,此时的t称为中位寿命</p>
 </li>
 </ul>
 </li>
 <li><p>维修特征量</p>
 <ol>
-<li><p>维修度：可修复产品在规定条件下使用，在规定时间内按照规定的程序和方法进行维修时，保持和恢复到能完成规定功能状态的概率，一般记为M<br>$$<br>维修时间\tau 用随机变量T表示则M(\tau):\<br>M(\tau)=P(T\leq\tau)<br>$$<br>其观测值为：在维修时间为0时处于故障状态需要维修的产品数与经过时间修复的产品数之比</p>
+<li><p>维修度：可修复产品在规定条件下使用，在规定时间内按照规定的程序和方法进行维修时，保持和恢复到能完成规定功能状态的概率，一般记为M</p>
+<script type="math/tex; mode=display">
+维修时间\tau 用随机变量T表示则M(\tau):\\
+M(\tau)=P(T\leq\tau)</script><p>其观测值为：在维修时间为0时处于故障状态需要维修的产品数与经过时间修复的产品数之比</p>
 </li>
-<li><p>修复率：修复率是修复时间达到某个时刻t但尚未修复的产品，在该时刻后的单位时间内完成修复的概率<br>$$<br>\mu=\frac{m(\tau)}{1-m(\tau)};\<br>m(\tau)=\frac{dm(\tau)}{d\tau}<br>$$</p>
-</li>
-<li><p>平均修复时间：产品修复时间的平均值。为修复时间T的数学期望E(T)<br>$$<br>MTTR=\overline\tau=E(T)=\int_{0}^{\infty}\tau m(\tau)d\tau<br>$$</p>
-</li>
+<li><p>修复率：修复率是修复时间达到某个时刻t但尚未修复的产品，在该时刻后的单位时间内完成修复的概率</p>
+<script type="math/tex; mode=display">
+\mu=\frac{m(\tau)}{1-m(\tau)};\\
+m(\tau)=\frac{dm(\tau)}{d\tau}</script></li>
+<li><p>平均修复时间：产品修复时间的平均值。为修复时间T的数学期望E(T)</p>
+<script type="math/tex; mode=display">
+MTTR=\overline\tau=E(T)=\int_{0}^{\infty}\tau m(\tau)d\tau</script></li>
 </ol>
 </li>
-<li><p>有效性特征量–有效度</p>
-<p>可用有效度衡量产品运转状态(可用率)的好坏。<br>有效度是可修复产品在规定的使用，维修条件下，在规定时间内，维持其功能处于正常状态的概率，一般记为A<br>$$<br>A(t,\tau)=R(t)+[1-R(t)]M(\tau)<br>$$<br>特别的，对于不可修复产品，M等于0</p>
+<li><p>有效性特征量—有效度</p>
+<p>可用有效度衡量产品运转状态(可用率)的好坏。<br>有效度是可修复产品在规定的使用，维修条件下，在规定时间内，维持其功能处于正常状态的概率，一般记为A</p>
+<script type="math/tex; mode=display">
+A(t,\tau)=R(t)+[1-R(t)]M(\tau)</script><p>特别的，对于不可修复产品，M等于0</p>
 <ol>
 <li>瞬时有效度：产品在某时刻t具有或维持其规定功能的概率，记为A(t)</li>
 <li>平均有效度：产品在某个规定时间区间(t1,t2)内有效度的平均值</li>
@@ -272,13 +282,19 @@
 <ol>
 <li>技术水平：对于技术成熟的单元，能够保证实现较高的可靠性</li>
 <li>复杂程度：简单，组装容易保证质量或故障后易于修复，则可分配较高的可靠度</li>
-<li>重要程度：重要的单元–失效会导致全系统失效，分配高的可靠度</li>
+<li>重要程度：重要的单元—失效会导致全系统失效，分配高的可靠度</li>
 <li>任务情况：整个任务时间内均需连续工作及工作条件严酷的工作单元，分配低的可靠度</li>
 </ol>
 </li>
 <li><p>可靠性的分配方法</p>
 <ol>
-<li>串联系统可靠度分配<br>$$<br>1.等分配法：R_i={R_s}^{\frac{1}{n}}\<br>2.再分配法：\breve{R_s}=\prod_{i=1}^{n}\breve{R_i}\<br>3.比例分配法：对于新设计的系统而言，其与原系统基本相同<br>$$<br>对于再分配法有<br>$$<br>若系统规定的R_s&gt;\breve{R_s},则需要改进\breve{R_i}\<br>提高 低可靠度单元的可靠性效果显著,所以只需将低可靠度的单元按等分配法进行再分配\<br>R_1=R_2=…=R_m=[\frac{R_s}{\prod_{i=m+1}^{n}\breve{R_i}}]^{\frac{1}{m}}\leq{\breve{R_{m+1}}}<br>$$</li>
+<li>串联系统可靠度分配<script type="math/tex; mode=display">
+1.等分配法：R_i={R_s}^{\frac{1}{n}}\\
+2.再分配法：\breve{R_s}=\prod_{i=1}^{n}\breve{R_i}\\
+3.比例分配法：对于新设计的系统而言，其与原系统基本相同</script>对于再分配法有<script type="math/tex; mode=display">
+若系统规定的R_s>\breve{R_s},则需要改进\breve{R_i}\\
+提高 低可靠度单元的可靠性效果显著,所以只需将低可靠度的单元按等分配法进行再分配\\
+R_1=R_2=...=R_m=[\frac{R_s}{\prod_{i=m+1}^{n}\breve{R_i}}]^{\frac{1}{m}}\leq{\breve{R_{m+1}}}</script></li>
 </ol>
 </li>
 </ol>
@@ -719,6 +735,6 @@ MathJax.Hub.Queue(function() {
             all[i].SourceElement().parentNode.className += ' has-jax';
     });
 </script>
-<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+<script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
 </body>
 </html>

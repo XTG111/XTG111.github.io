@@ -177,7 +177,6 @@
       
         <p>浙大机器学习</p>
 <span id="more"></span>
-
 <h1 id="定义和一些概念"><a href="#定义和一些概念" class="headerlink" title="定义和一些概念"></a>定义和一些概念</h1><p>Tom Mitshell:一个计算机程序被称为可以学习，是指它能够针对某个任务T和某个性能指标P，从经验E中学习。这种学习的特点是，他在T上的被P所衡量的性能会随着经验E的增加而提高。</p>
 <p>经验E和性能指标P均为人为设计的。</p>
 <p>识别率：把识别的正确率简称识别率，可作为性能指标。</p>
@@ -215,87 +214,125 @@
 <p>机器学习的本质是通过有限的已知数据，在复杂的高纬度特征空间中预测未知的样本</p>
 <h1 id="支持向量机"><a href="#支持向量机" class="headerlink" title="支持向量机"></a>支持向量机</h1><h3 id="线性可分和线性不可分"><a href="#线性可分和线性不可分" class="headerlink" title="线性可分和线性不可分"></a>线性可分和线性不可分</h3><p>在二维空间下是否可以以一条直线来分开数据集</p>
 <p>在三维空间下是否可以以一个平面来划分数据集</p>
-<h4 id="二维空间下"><a href="#二维空间下" class="headerlink" title="二维空间下"></a>二维空间下</h4><p>线性可分：有直线方程<br>$$<br>w_1x_1+w_2x_2+b=0<br>$$</p>
-<p>$$<br>w_1,w_2为权重，b为偏置<br>$$</p>
-<p>在直线的一边有其值小于零，另一边值大于零</p>
-<p>这样有一假设，我们有N个训练样本和他们的标签<br>$$<br>{(X_1,y_1),(X_2,y_2),…,(X_N,y_N)}<br>$$</p>
-<p>$$<br>其中 X_i = [x_{i1},x_{i2}]^T\<br>y_i={+1,-1}\<br>$$</p>
-<p>$$<br>当y_i=+1,x_i属于c_1\<br>当y_i=-1,x_i属于c_2<br>$$</p>
-<h4 id="线性可分的严格定义"><a href="#线性可分的严格定义" class="headerlink" title="线性可分的严格定义"></a>线性可分的严格定义</h4><p>在一个训练样本集{(Xi,yi),…,(XN,yN)},在i=1~N线性可分，是指存在(w1,w2,b)使得对i=1 ~N,有：<br>$$<br>若y_i=+1,则w_1x_{i1}+w_2x_{i2}+b&gt;0<br>$$</p>
-<p>$$<br>若y_i=-1,则w_1x_{i1}+w_2x_{i2}+b&lt;0<br>$$</p>
-<h3 id="问题描述"><a href="#问题描述" class="headerlink" title="问题描述"></a>问题描述</h3><h4 id="支持向量机算法"><a href="#支持向量机算法" class="headerlink" title="支持向量机算法"></a>支持向量机算法</h4><p>1.解决线性可分问题</p>
+<h4 id="二维空间下"><a href="#二维空间下" class="headerlink" title="二维空间下"></a>二维空间下</h4><p>线性可分：有直线方程</p>
+<script type="math/tex; mode=display">
+w_1x_1+w_2x_2+b=0</script><script type="math/tex; mode=display">
+w_1,w_2为权重，b为偏置</script><p>在直线的一边有其值小于零，另一边值大于零</p>
+<p>这样有一假设，我们有N个训练样本和他们的标签</p>
+<script type="math/tex; mode=display">
+\{(X_1,y_1),(X_2,y_2),...,(X_N,y_N)\}</script><script type="math/tex; mode=display">
+其中 X_i = [x_{i1},x_{i2}]^T\\
+y_i=\{+1,-1\}\\</script><script type="math/tex; mode=display">
+当y_i=+1,x_i属于c_1\\
+当y_i=-1,x_i属于c_2</script><h4 id="线性可分的严格定义"><a href="#线性可分的严格定义" class="headerlink" title="线性可分的严格定义"></a>线性可分的严格定义</h4><p>在一个训练样本集{(Xi,yi),…,(XN,yN)},在i=1~N线性可分，是指存在(w1,w2,b)使得对i=1 ~N,有：</p>
+<script type="math/tex; mode=display">
+若y_i=+1,则w_1x_{i1}+w_2x_{i2}+b>0</script><script type="math/tex; mode=display">
+若y_i=-1,则w_1x_{i1}+w_2x_{i2}+b<0</script><h3 id="问题描述"><a href="#问题描述" class="headerlink" title="问题描述"></a>问题描述</h3><h4 id="支持向量机算法"><a href="#支持向量机算法" class="headerlink" title="支持向量机算法"></a>支持向量机算法</h4><p>1.解决线性可分问题</p>
 <p>2.再将线性可分问题中获得的结论推广到线性不可分情况</p>
 <h5 id="支持向量机寻找的最优分类直线"><a href="#支持向量机寻找的最优分类直线" class="headerlink" title="支持向量机寻找的最优分类直线"></a>支持向量机寻找的最优分类直线</h5><p><strong>基于二维平面</strong></p>
 <p>1.该直线分开了两类</p>
 <p>2.该直线最大化了间隔</p>
 <p>3.该直线处于间隔的中间，到所有支持向量距离相等</p>
 <p>间隔：将划分直线平移，与两个训练样本第一次相交所形成的两条平行直线的距离称为间隔。而平移直线所相交的样本称为支持向量。</p>
-<h3 id="线性可分的情况"><a href="#线性可分的情况" class="headerlink" title="线性可分的情况"></a>线性可分的情况</h3><p>首先假定训练样本集是线性可分的，则有支持向量机需要寻找的最大化间隔的超平面满足以下关系式<br>$$<br>最小化(Minimize):\frac{1}{2}||w||^2<br>$$</p>
-<p>$$<br>限制条件:y_i(w^Tx_i+b)\geq1,(i=1-N)<br>$$</p>
-<p>对于支持向量机问题，我们已知的是训练样本集{(Xi,yi)},i=1到N。需要我们求解的是(w,b) </p>
-<p>一个点X0到超平面的距离<br>$$<br>超平面方程为:w^Tx_0+b=0<br>$$</p>
-<p>$$<br>d=\frac{|w^Tx_0+b|}{||w||}<br>$$</p>
-<p>对于凸优化问题中的二次规划问题，要么无解，要么只有唯一的最小值</p>
+<h3 id="线性可分的情况"><a href="#线性可分的情况" class="headerlink" title="线性可分的情况"></a>线性可分的情况</h3><p>首先假定训练样本集是线性可分的，则有支持向量机需要寻找的最大化间隔的超平面满足以下关系式</p>
+<script type="math/tex; mode=display">
+最小化(Minimize):\frac{1}{2}||w||^2</script><script type="math/tex; mode=display">
+限制条件:y_i(w^Tx_i+b)\geq1,(i=1-N)</script><p>对于支持向量机问题，我们已知的是训练样本集{(Xi,yi)},i=1到N。需要我们求解的是(w,b) </p>
+<p>一个点X0到超平面的距离</p>
+<script type="math/tex; mode=display">
+超平面方程为:w^Tx_0+b=0</script><script type="math/tex; mode=display">
+d=\frac{|w^Tx_0+b|}{||w||}</script><p>对于凸优化问题中的二次规划问题，要么无解，要么只有唯一的最小值</p>
 <p>二次规划问题：</p>
 <p>​    1.目标函数是二次项</p>
 <p>​    2.限制条件是一次项</p>
 <p>对于凸优化的问题，是总能找出一个最优解的</p>
-<h3 id="线性不可分情况"><a href="#线性不可分情况" class="headerlink" title="线性不可分情况"></a>线性不可分情况</h3><p>如果继续使用线性可分的限制条件那么在线性不可分下必然无解。所以我们需要放松限制条件，对每个训练样本以及标签(Xi,Yi)设置一个松弛变量δi，有<br>$$<br>限制条件:y_i(w^Tx_i+b)\geq1-\delta_i,(i=1-N)<br>$$<br>最终的条件为<br>$$<br>最小化:\frac{1}{2}||w||^2+C\sum_{i=1}^{N}\delta_i 或 \frac{1}{2}||w||^2+C\sum_{i=1}^{N}\delta_i^2<br>$$</p>
-<p>$$<br>限制条件:      1)\delta_i\geq0,(i=1-N)<br>$$</p>
-<p>$$<br>2)y_i(w^Tx_i+b)\geq1-\delta_i,(i=1-N)<br>$$</p>
-<p>C是人为设定的一个调节参数。在机器学习中，我们把需要人为设定的参数叫做算法超参数</p>
+<h3 id="线性不可分情况"><a href="#线性不可分情况" class="headerlink" title="线性不可分情况"></a>线性不可分情况</h3><p>如果继续使用线性可分的限制条件那么在线性不可分下必然无解。所以我们需要放松限制条件，对每个训练样本以及标签(Xi,Yi)设置一个松弛变量δi，有</p>
+<script type="math/tex; mode=display">
+限制条件:y_i(w^Tx_i+b)\geq1-\delta_i,(i=1-N)</script><p>最终的条件为</p>
+<script type="math/tex; mode=display">
+最小化:\frac{1}{2}||w||^2+C\sum_{i=1}^{N}\delta_i 或 \frac{1}{2}||w||^2+C\sum_{i=1}^{N}\delta_i^2</script><script type="math/tex; mode=display">
+限制条件:      1)\delta_i\geq0,(i=1-N)</script><script type="math/tex; mode=display">
+2)y_i(w^Tx_i+b)\geq1-\delta_i,(i=1-N)</script><p>C是人为设定的一个调节参数。在机器学习中，我们把需要人为设定的参数叫做算法超参数</p>
 <h3 id="低维到高维的映射-扩大可选函数范围"><a href="#低维到高维的映射-扩大可选函数范围" class="headerlink" title="低维到高维的映射(扩大可选函数范围)"></a>低维到高维的映射(扩大可选函数范围)</h3><p>有一定理：假设在一个M维空间上随机取N个训练样本随机的对每个训练样本赋予标签+1或-1，在假设这些训练样本线性可分的概率为P(M)，当M趋于无穷大时，P(M)=1。</p>
 <p>所以对于低维上，线性不可分问题映射到高维后可以变成一个线性可分问题</p>
-<p>当映射函数为f(x)时有条件转变为<br>$$<br>最小化:\frac{1}{2}||w||^2+C\sum_{i=1}^{N}\delta_i 或 \frac{1}{2}||w||^2+C\sum_{i=1}^{N}\delta_i^2<br>$$</p>
-<p>$$<br>限制条件:      1)\delta_i\geq0,(i=1-N)<br>$$</p>
-<p>$$<br>2)y_i(w^Tf(x_i)+b)\geq1-\delta_i,(i=1-N)<br>$$</p>
-<h3 id="核函数的定义"><a href="#核函数的定义" class="headerlink" title="核函数的定义"></a>核函数的定义</h3><p>核函数K(X1,X2)<br>$$<br>K(X_1,X_2)=\varphi(X_1)^T\varphi(X_2)<br>$$<br>K(X1,X2)能写成上述等式的充要条件<br>$$<br>K(X_1,X_2)=K(X_2,X_1)<br>$$</p>
-<p>$$<br>\forall C_i(i=1-N),\forall N有\sum_{i=1}^{N}\sum_{j=1}^{N}C_iC_jK(Xi,Xj)\geq0<br>$$</p>
-<h3 id="原问题和对偶问题"><a href="#原问题和对偶问题" class="headerlink" title="原问题和对偶问题"></a>原问题和对偶问题</h3><h4 id="原问题"><a href="#原问题" class="headerlink" title="原问题"></a>原问题</h4><p>$$<br>最小化：f(w)<br>$$</p>
-<p>$$<br>限制条件:g_i(w)\leq0\quad i=1-K<br>$$</p>
-<p>$$<br>h_i(w)=0\quad i=1-m<br>$$</p>
-<p>最优化问题的自变量为多维向量w，目标函数为f(w)</p>
-<h4 id="对偶问题"><a href="#对偶问题" class="headerlink" title="对偶问题"></a>对偶问题</h4><p>定义函数<br>$$<br>L(w,\alpha,\beta) = f(w)+\sum_{i=1}^{K}\alpha_ig_i(w)+\sum_{i=1}^{K}\beta_ih_i(w)=f(w)+\alpha^Tg(w)+\beta^Th(w)<br>$$<br>其中<br>$$<br>\alpha=[\alpha_1,\alpha_2,…,\alpha_K]^T<br>$$</p>
-<p>$$<br>\beta=[\beta_1,\beta_2,…,\beta_M]^T<br>$$</p>
-<p>$$<br>g(w)=[g_1(w),g_2(w),…,g_k(w)]^T<br>$$</p>
-<p>$$<br>h(w)=[h_1(w),h_2(w),…,h_M(w)]^T<br>$$</p>
-<p>在以上函数下，定义对偶问题如下：<br>$$<br>最大化:\theta(\alpha,\beta)=inf\ L(w,\alpha,\beta) \quad 所有定义域内的w<br>$$</p>
-<p>$$<br>限制条件:\alpha_i\geq0,i=1-K<br>$$</p>
-<p>则有如下定理定理一<br>$$<br>如果w^<em>是原问题的解，(\alpha^</em>,\beta^*)是对偶问题的解则有：f(w^*)\geq\theta(\alpha^*,\beta^*)<br>$$</p>
-<h4 id="对偶差距"><a href="#对偶差距" class="headerlink" title="对偶差距"></a>对偶差距</h4><p>$$<br>f(w^*)-\theta(\alpha^*,\beta^*)<br>$$</p>
-<h4 id="强对偶定理"><a href="#强对偶定理" class="headerlink" title="强对偶定理"></a>强对偶定理</h4><p>$$<br>如果g(w)=Aw+b,h(w)=Cw+d,f(w)为凸函数,则有f(w^*)=\theta(\alpha^*,\beta^*),则对偶差距为0<br>$$</p>
-<h4 id="KKT条件"><a href="#KKT条件" class="headerlink" title="KKT条件"></a>KKT条件</h4><p>$$<br>若f(w^*)=\theta(\alpha^*,\beta^*),则定理一必然能够推出，对于所有的i=1-K,要么\alpha_i=0,要么g_i(w^*)=0<br>$$</p>
-<h3 id="原问题转换为对偶问题"><a href="#原问题转换为对偶问题" class="headerlink" title="原问题转换为对偶问题"></a>原问题转换为对偶问题</h3><p>支持向量机是满足强对偶定理的</p>
-<p>将其整理为原问题为<br>$$<br>最小化:\frac{1}{2}||w||^2-C\sum_{i=1}^{N}\delta_i或\frac{1}{2}||w||^2+C\sum_{i=1}^{N}\delta_i^2<br>$$</p>
-<p>$$<br>限制条件:\delta_i\leq0 \quad (i=1-N)<br>$$</p>
-<p>$$<br>1+\delta_i-y_iw^T\varphi(X_i)-y_ib\leq0\quad(i=1-N)<br>$$</p>
-<p>则其对偶问题如下<br>$$<br>最大化:\theta(\alpha,\beta)=inf_{w,\delta_i,b}{\frac{1}{2}||w||^2-C\sum_{i=1}^{N}\beta_i\delta_i+\sum_{i=1}^{N}\alpha_i[1+\delta_i-y_iw^T\varphi(X_i)-y_ib]}<br>$$</p>
-<p>$$<br>限制条件:\alpha_i\geq0<br>$$</p>
-<p>$$<br>\beta\geq0<br>$$</p>
-<p>我们需要求解的是w,b,δi的值使得有极值，则可分别对其求导并令导数为0<br>$$<br>\frac{\partial\theta}{\partial w}=w-\sum_{i=1}^{N}\alpha_i\varphi(X_i)y_i = 0\implies w=\sum_{i=1}^{N}\alpha_i\varphi(X_i)y_i<br>$$</p>
-<p>$$<br>\frac{\partial\theta}{\partial\delta_i}=-C+\alpha_i+\beta_i \implies C=\alpha_i+\beta_i<br>$$</p>
-<p>$$<br>\frac{\partial\theta}{\partial b}=-\sum_{i=1}^{N}\alpha_iy_i = 0\implies \sum_{i=1}^{N}\alpha_iy_i=0<br>$$</p>
-<p>可以将支持向量机的原问题化为对偶问题：<br>$$<br>最大化:\theta(\alpha,\beta)=\sum_{i=1}^{N}\alpha_i-\frac{1}{2}\sum_{i=1}^{N}\sum_{j=1}^{N}y_iy_j\alpha_i\alpha_j\varphi(X_i)^T\varphi(X_i)<br>$$</p>
-<p>$$<br>限制条件:0\leq\alpha_i\leq C\quad(i=1-N)<br>$$</p>
-<p>$$<br>\sum_{i=1}^{N}\alpha_iy_i=0\quad(i=1-N)<br>$$</p>
-<h3 id="算法总体流程"><a href="#算法总体流程" class="headerlink" title="算法总体流程"></a>算法总体流程</h3><h4 id="求b"><a href="#求b" class="headerlink" title="求b"></a>求b</h4><p>$$<br>由于w=\sum_{j=1}^{N}\alpha_jy_j\varphi(X_i)<br>$$</p>
-<p>$$<br>则w^T\varphi(X_i)=\sum_{i=1}^{N}\alpha_jy_j\varphi(X_j)^T\varphi(X_i)=\sum_{j=1}^{N}\alpha_jy_jK(X_i,X_j)<br>$$</p>
-<p>由于KKT条件，我们可以得到<br>$$<br>\alpha_i[1+\delta_i-y_iw^T\varphi(X_i)-y_ib]=0<br>$$</p>
-<p>$$<br>\beta_i\delta_i=0 \implies (c-\alpha_i)\delta_i=0<br>$$</p>
-<p>如果对于某个i有<br>$$<br>\alpha_i\not=0且\not=c，则根据KKT条件必有\delta_i=0<br>$$</p>
-<p>$$<br>1+\delta_i-y_iw^T\varphi(X_i)-y_ib=0<br>$$</p>
-<p>而<br>$$<br>y_iw^T\varphi(X_i)=\sum_{j=1}^{N}\alpha_i\alpha_jy_jK(X_j,X_i)<br>$$<br>所以<br>$$<br>当0&lt;\alpha_i&lt;C时有<br>$$</p>
-<p>$$<br>b=\frac{1-\sum_{j=1}^{N}\alpha_i\alpha_jy_jK(X_j,X_i)}{y_i}<br>$$</p>
-<h4 id="判断测试样本类别"><a href="#判断测试样本类别" class="headerlink" title="判断测试样本类别"></a>判断测试样本类别</h4><p>通过计算<br>$$<br>w^T\varphi(X)+b<br>$$<br>我们有<br>$$<br>w=\sum_{i=1}^{N}\alpha_iy_i\varphi(X_i)和b=\frac{1-\sum_{j=1}^{N}\alpha_i\alpha_jy_jK(X_j,X_i)}{y_i}<br>$$<br>则<br>$$<br>w^T\varphi(X)+b=\sum_{i=1}^{N}\alpha_iy_i\varphi(X_i)^T\varphi(X)+b=\sum_{i=1}^{N}\alpha_iy_iK(X_i,X)+b<br>$$</p>
-<h3 id="支持向量机训练和测试的流程"><a href="#支持向量机训练和测试的流程" class="headerlink" title="支持向量机训练和测试的流程"></a>支持向量机训练和测试的流程</h3><h4 id="1-训练过程"><a href="#1-训练过程" class="headerlink" title="1.训练过程"></a>1.训练过程</h4><p>输入训练数据{(Xi,yi)} i=1~ N,其中yi=±1，有<br>$$<br>最大化：\theta(\alpha)=\sum_{i=1}^{N}\alpha_i-\frac{1}{2}\sum_{i=1}^{N}\sum_{j=1}^{N}y_iy_j\alpha_i\alpha_j\varphi(X_i)^T\varphi(X_j)<br>$$</p>
-<p>$$<br>限制条件：0\leq\delta_i\leq C\quad(i=1-N)<br>$$</p>
-<p>$$<br>\sum_{i=1}^{N}\alpha_iy_i=0\quad(i=1-N)<br>$$</p>
-<p>求得αi</p>
-<p>再求b<br>$$<br>找一个\alpha_i\not=0且\not=c,则b=\frac{1-\sum_{j=1}^{N}\alpha_i\alpha_jy_jK(X_j,X_i)}{y_i}<br>$$<br>找到所有αi和b,即完成了训练过程</p>
-<h4 id="2-测试过程"><a href="#2-测试过程" class="headerlink" title="2.测试过程"></a>2.测试过程</h4><p>考察测试数据X，预测它的类别y<br>$$<br>\sum_{i=1}^{N}\alpha_iy_iK(X_i,X)+b\geq0，则y=+1<br>$$</p>
-<p>$$<br>\sum_{i=1}^{N}\alpha_iy_iK(X_i,X)+b &lt;0,则y=-1<br>$$</p>
-<h3 id="程序编写"><a href="#程序编写" class="headerlink" title="程序编写"></a>程序编写</h3><h4 id="训练样本归一化"><a href="#训练样本归一化" class="headerlink" title="训练样本归一化"></a>训练样本归一化</h4><p>在训练样本上，求出每个维度的均值和方差，在训练和测试样本上同时归一化<br>$$<br>newX=\frac{X-mean(X)}{std(X)}<br>$$</p>
-<h3 id="识别系统的性能度量"><a href="#识别系统的性能度量" class="headerlink" title="识别系统的性能度量"></a>识别系统的性能度量</h3><p>单纯用识别率来判断系统是没有意义的</p>
+<p>当映射函数为f(x)时有条件转变为</p>
+<script type="math/tex; mode=display">
+最小化:\frac{1}{2}||w||^2+C\sum_{i=1}^{N}\delta_i 或 \frac{1}{2}||w||^2+C\sum_{i=1}^{N}\delta_i^2</script><script type="math/tex; mode=display">
+限制条件:      1)\delta_i\geq0,(i=1-N)</script><script type="math/tex; mode=display">
+2)y_i(w^Tf(x_i)+b)\geq1-\delta_i,(i=1-N)</script><h3 id="核函数的定义"><a href="#核函数的定义" class="headerlink" title="核函数的定义"></a>核函数的定义</h3><p>核函数K(X1,X2)</p>
+<script type="math/tex; mode=display">
+K(X_1,X_2)=\varphi(X_1)^T\varphi(X_2)</script><p>K(X1,X2)能写成上述等式的充要条件</p>
+<script type="math/tex; mode=display">
+K(X_1,X_2)=K(X_2,X_1)</script><script type="math/tex; mode=display">
+\forall C_i(i=1-N),\forall N有\sum_{i=1}^{N}\sum_{j=1}^{N}C_iC_jK(Xi,Xj)\geq0</script><h3 id="原问题和对偶问题"><a href="#原问题和对偶问题" class="headerlink" title="原问题和对偶问题"></a>原问题和对偶问题</h3><h4 id="原问题"><a href="#原问题" class="headerlink" title="原问题"></a>原问题</h4><script type="math/tex; mode=display">
+最小化：f(w)</script><script type="math/tex; mode=display">
+限制条件:g_i(w)\leq0\quad i=1-K</script><script type="math/tex; mode=display">
+h_i(w)=0\quad i=1-m</script><p>最优化问题的自变量为多维向量w，目标函数为f(w)</p>
+<h4 id="对偶问题"><a href="#对偶问题" class="headerlink" title="对偶问题"></a>对偶问题</h4><p>定义函数</p>
+<script type="math/tex; mode=display">
+L(w,\alpha,\beta) = f(w)+\sum_{i=1}^{K}\alpha_ig_i(w)+\sum_{i=1}^{K}\beta_ih_i(w)=f(w)+\alpha^Tg(w)+\beta^Th(w)</script><p>其中</p>
+<script type="math/tex; mode=display">
+\alpha=[\alpha_1,\alpha_2,...,\alpha_K]^T</script><script type="math/tex; mode=display">
+\beta=[\beta_1,\beta_2,...,\beta_M]^T</script><script type="math/tex; mode=display">
+g(w)=[g_1(w),g_2(w),...,g_k(w)]^T</script><script type="math/tex; mode=display">
+h(w)=[h_1(w),h_2(w),...,h_M(w)]^T</script><p>在以上函数下，定义对偶问题如下：</p>
+<script type="math/tex; mode=display">
+最大化:\theta(\alpha,\beta)=inf\ L(w,\alpha,\beta) \quad 所有定义域内的w</script><script type="math/tex; mode=display">
+限制条件:\alpha_i\geq0,i=1-K</script><p>则有如下定理定理一</p>
+<script type="math/tex; mode=display">
+如果w^*是原问题的解，(\alpha^*,\beta^*)是对偶问题的解则有：f(w^*)\geq\theta(\alpha^*,\beta^*)</script><h4 id="对偶差距"><a href="#对偶差距" class="headerlink" title="对偶差距"></a>对偶差距</h4><script type="math/tex; mode=display">
+f(w^*)-\theta(\alpha^*,\beta^*)</script><h4 id="强对偶定理"><a href="#强对偶定理" class="headerlink" title="强对偶定理"></a>强对偶定理</h4><script type="math/tex; mode=display">
+如果g(w)=Aw+b,h(w)=Cw+d,f(w)为凸函数,则有f(w^*)=\theta(\alpha^*,\beta^*),则对偶差距为0</script><h4 id="KKT条件"><a href="#KKT条件" class="headerlink" title="KKT条件"></a>KKT条件</h4><script type="math/tex; mode=display">
+若f(w^*)=\theta(\alpha^*,\beta^*),则定理一必然能够推出，对于所有的i=1-K,要么\alpha_i=0,要么g_i(w^*)=0</script><h3 id="原问题转换为对偶问题"><a href="#原问题转换为对偶问题" class="headerlink" title="原问题转换为对偶问题"></a>原问题转换为对偶问题</h3><p>支持向量机是满足强对偶定理的</p>
+<p>将其整理为原问题为</p>
+<script type="math/tex; mode=display">
+最小化:\frac{1}{2}||w||^2-C\sum_{i=1}^{N}\delta_i或\frac{1}{2}||w||^2+C\sum_{i=1}^{N}\delta_i^2</script><script type="math/tex; mode=display">
+限制条件:\delta_i\leq0 \quad (i=1-N)</script><script type="math/tex; mode=display">
+1+\delta_i-y_iw^T\varphi(X_i)-y_ib\leq0\quad(i=1-N)</script><p>则其对偶问题如下</p>
+<script type="math/tex; mode=display">
+最大化:\theta(\alpha,\beta)=inf_{w,\delta_i,b}\{\frac{1}{2}||w||^2-C\sum_{i=1}^{N}\beta_i\delta_i+\sum_{i=1}^{N}\alpha_i[1+\delta_i-y_iw^T\varphi(X_i)-y_ib]\}</script><script type="math/tex; mode=display">
+限制条件:\alpha_i\geq0</script><script type="math/tex; mode=display">
+\beta\geq0</script><p>我们需要求解的是w,b,δi的值使得有极值，则可分别对其求导并令导数为0</p>
+<script type="math/tex; mode=display">
+\frac{\partial\theta}{\partial w}=w-\sum_{i=1}^{N}\alpha_i\varphi(X_i)y_i = 0\implies w=\sum_{i=1}^{N}\alpha_i\varphi(X_i)y_i</script><script type="math/tex; mode=display">
+\frac{\partial\theta}{\partial\delta_i}=-C+\alpha_i+\beta_i \implies C=\alpha_i+\beta_i</script><script type="math/tex; mode=display">
+\frac{\partial\theta}{\partial b}=-\sum_{i=1}^{N}\alpha_iy_i = 0\implies \sum_{i=1}^{N}\alpha_iy_i=0</script><p>可以将支持向量机的原问题化为对偶问题：</p>
+<script type="math/tex; mode=display">
+最大化:\theta(\alpha,\beta)=\sum_{i=1}^{N}\alpha_i-\frac{1}{2}\sum_{i=1}^{N}\sum_{j=1}^{N}y_iy_j\alpha_i\alpha_j\varphi(X_i)^T\varphi(X_i)</script><script type="math/tex; mode=display">
+限制条件:0\leq\alpha_i\leq C\quad(i=1-N)</script><script type="math/tex; mode=display">
+\sum_{i=1}^{N}\alpha_iy_i=0\quad(i=1-N)</script><h3 id="算法总体流程"><a href="#算法总体流程" class="headerlink" title="算法总体流程"></a>算法总体流程</h3><h4 id="求b"><a href="#求b" class="headerlink" title="求b"></a>求b</h4><script type="math/tex; mode=display">
+由于w=\sum_{j=1}^{N}\alpha_jy_j\varphi(X_i)</script><script type="math/tex; mode=display">
+则w^T\varphi(X_i)=\sum_{i=1}^{N}\alpha_jy_j\varphi(X_j)^T\varphi(X_i)=\sum_{j=1}^{N}\alpha_jy_jK(X_i,X_j)</script><p>由于KKT条件，我们可以得到</p>
+<script type="math/tex; mode=display">
+\alpha_i[1+\delta_i-y_iw^T\varphi(X_i)-y_ib]=0</script><script type="math/tex; mode=display">
+\beta_i\delta_i=0 \implies (c-\alpha_i)\delta_i=0</script><p>如果对于某个i有</p>
+<script type="math/tex; mode=display">
+\alpha_i\not=0且\not=c，则根据KKT条件必有\delta_i=0</script><script type="math/tex; mode=display">
+1+\delta_i-y_iw^T\varphi(X_i)-y_ib=0</script><p>而</p>
+<script type="math/tex; mode=display">
+y_iw^T\varphi(X_i)=\sum_{j=1}^{N}\alpha_i\alpha_jy_jK(X_j,X_i)</script><p>所以</p>
+<script type="math/tex; mode=display">
+当0<\alpha_i<C时有</script><script type="math/tex; mode=display">
+b=\frac{1-\sum_{j=1}^{N}\alpha_i\alpha_jy_jK(X_j,X_i)}{y_i}</script><h4 id="判断测试样本类别"><a href="#判断测试样本类别" class="headerlink" title="判断测试样本类别"></a>判断测试样本类别</h4><p>通过计算</p>
+<script type="math/tex; mode=display">
+w^T\varphi(X)+b</script><p>我们有</p>
+<script type="math/tex; mode=display">
+w=\sum_{i=1}^{N}\alpha_iy_i\varphi(X_i)和b=\frac{1-\sum_{j=1}^{N}\alpha_i\alpha_jy_jK(X_j,X_i)}{y_i}</script><p>则</p>
+<script type="math/tex; mode=display">
+w^T\varphi(X)+b=\sum_{i=1}^{N}\alpha_iy_i\varphi(X_i)^T\varphi(X)+b=\sum_{i=1}^{N}\alpha_iy_iK(X_i,X)+b</script><h3 id="支持向量机训练和测试的流程"><a href="#支持向量机训练和测试的流程" class="headerlink" title="支持向量机训练和测试的流程"></a>支持向量机训练和测试的流程</h3><h4 id="1-训练过程"><a href="#1-训练过程" class="headerlink" title="1.训练过程"></a>1.训练过程</h4><p>输入训练数据{(Xi,yi)} i=1~ N,其中yi=±1，有</p>
+<script type="math/tex; mode=display">
+最大化：\theta(\alpha)=\sum_{i=1}^{N}\alpha_i-\frac{1}{2}\sum_{i=1}^{N}\sum_{j=1}^{N}y_iy_j\alpha_i\alpha_j\varphi(X_i)^T\varphi(X_j)</script><script type="math/tex; mode=display">
+限制条件：0\leq\delta_i\leq C\quad(i=1-N)</script><script type="math/tex; mode=display">
+\sum_{i=1}^{N}\alpha_iy_i=0\quad(i=1-N)</script><p>求得αi</p>
+<p>再求b</p>
+<script type="math/tex; mode=display">
+找一个\alpha_i\not=0且\not=c,则b=\frac{1-\sum_{j=1}^{N}\alpha_i\alpha_jy_jK(X_j,X_i)}{y_i}</script><p>找到所有αi和b,即完成了训练过程</p>
+<h4 id="2-测试过程"><a href="#2-测试过程" class="headerlink" title="2.测试过程"></a>2.测试过程</h4><p>考察测试数据X，预测它的类别y</p>
+<script type="math/tex; mode=display">
+\sum_{i=1}^{N}\alpha_iy_iK(X_i,X)+b\geq0，则y=+1</script><script type="math/tex; mode=display">
+\sum_{i=1}^{N}\alpha_iy_iK(X_i,X)+b <0,则y=-1</script><h3 id="程序编写"><a href="#程序编写" class="headerlink" title="程序编写"></a>程序编写</h3><h4 id="训练样本归一化"><a href="#训练样本归一化" class="headerlink" title="训练样本归一化"></a>训练样本归一化</h4><p>在训练样本上，求出每个维度的均值和方差，在训练和测试样本上同时归一化</p>
+<script type="math/tex; mode=display">
+newX=\frac{X-mean(X)}{std(X)}</script><h3 id="识别系统的性能度量"><a href="#识别系统的性能度量" class="headerlink" title="识别系统的性能度量"></a>识别系统的性能度量</h3><p>单纯用识别率来判断系统是没有意义的</p>
 <h4 id="混淆矩阵"><a href="#混淆矩阵" class="headerlink" title="混淆矩阵"></a>混淆矩阵</h4><p>对于二分类问题，可将样例根据其真实类别与分类器预测类别的组合进行如下划分。真实值是Positive，模型认为是Positive的数量（True Positive=TP）。真实值是Positive，模型认为是Negative的数量（False Negative=FN）。真实值是Negative，模型认为是Positive的数量（False Positive=FP）。真实值是Negative，模型认为是Negative的数量（True Negative=TN）。</p>
 <p><img src="https://i.loli.net/2021/04/11/k6HpYgUsKrC2BJf.jpg" alt="hunxiaomatrix.jpg"></p>
 <h4 id="ROC曲线"><a href="#ROC曲线" class="headerlink" title="ROC曲线"></a>ROC曲线</h4><h5 id="AUC"><a href="#AUC" class="headerlink" title="AUC"></a>AUC</h5><p><a target="_blank" rel="noopener" href="https://www.cnblogs.com/gatherstars/p/6084696.html">参考连接</a></p>
@@ -305,36 +342,59 @@
 <p>3.类别3 VS 类别1，2，4，… K</p>
 <p>一直到</p>
 <p>k.类别kVS 类别1，2，3，4，… K-1</p>
-<p>假设对于每个优化问题，左边单一类别的标签为+1，右边K-1个类别的标签为-1.<br>$$<br>得到K个\alpha和\beta的组合:{\alpha_i^{(k)} }<em>{i=1-N},b^{(k)},k=1…K\\对于一个测试样本X，我们判断其类别为k</em>{max}=arg\ max\sum_{i=1}^{N}\alpha_i^{(k)}y_iK(X_i,X)+b^{(k)},k=1-K<br>$$<br>会导致训练样本不平衡</p>
+<p>假设对于每个优化问题，左边单一类别的标签为+1，右边K-1个类别的标签为-1.</p>
+<script type="math/tex; mode=display">
+得到K个\alpha和\beta的组合:{\alpha_i^{(k)} }_{i=1-N},b^{(k)},k=1...K\\\\对于一个测试样本X，我们判断其类别为k_{max}=arg\ max\sum_{i=1}^{N}\alpha_i^{(k)}y_iK(X_i,X)+b^{(k)},k=1-K</script><p>会导致训练样本不平衡</p>
 <h4 id="1类对另1类"><a href="#1类对另1类" class="headerlink" title="1类对另1类"></a>1类对另1类</h4><p>假设有三类，那么我们就构建三个支持向量机分类器</p>
 <p>1.类别1 VS 类别2</p>
 <p>2.类别1 VS 类别3</p>
 <p>3.类别2 VS 类别3</p>
-<h1 id="人工神经网络"><a href="#人工神经网络" class="headerlink" title="人工神经网络"></a>人工神经网络</h1><h3 id="神经元的数学模型"><a href="#神经元的数学模型" class="headerlink" title="神经元的数学模型"></a>神经元的数学模型</h3><p>MP模型<br>$$<br>y=\varphi(\sum_{i=1}^{m}w_ix_i+b)=\varphi(W^TX+b)<br>$$</p>
-<h3 id="感知器算法"><a href="#感知器算法" class="headerlink" title="感知器算法"></a>感知器算法</h3><p>对于线性可分问题有较好的解决</p>
+<h1 id="人工神经网络"><a href="#人工神经网络" class="headerlink" title="人工神经网络"></a>人工神经网络</h1><h3 id="神经元的数学模型"><a href="#神经元的数学模型" class="headerlink" title="神经元的数学模型"></a>神经元的数学模型</h3><p>MP模型</p>
+<script type="math/tex; mode=display">
+y=\varphi(\sum_{i=1}^{m}w_ix_i+b)=\varphi(W^TX+b)</script><h3 id="感知器算法"><a href="#感知器算法" class="headerlink" title="感知器算法"></a>感知器算法</h3><p>对于线性可分问题有较好的解决</p>
 <p>自动寻找w,b的方法</p>
 <p>1.随机选择w和b</p>
-<p>2.取一个训练样本(X,y)<br>$$<br>i.若W^t+b&gt;0,且y=-1,则w=w-X\quad b=b-1<br>$$</p>
-<p>$$<br>ii.若w^T+b&lt;0,且y=+1,则w=w+X\quad b=b+1<br>$$</p>
-<p>3.再取另外一个(X,y),回到(2)</p>
+<p>2.取一个训练样本(X,y)</p>
+<script type="math/tex; mode=display">
+i.若W^t+b>0,且y=-1,则w=w-X\quad b=b-1</script><script type="math/tex; mode=display">
+ii.若w^T+b<0,且y=+1,则w=w+X\quad b=b+1</script><p>3.再取另外一个(X,y),回到(2)</p>
 <p>4.终止条件：知道所有输入输出对(X,y),都不满足(2)中的i和ii之一，退出循环</p>
-<h4 id="一些定义"><a href="#一些定义" class="headerlink" title="一些定义"></a>一些定义</h4><p>对于某个Xi,我们定义它的增广向量如下<br>$$<br>i.若y_i=+1,则\vec{x_i}=\left[\begin{matrix}x_i\\1\end{matrix}\right]<br>$$</p>
-<p>$$<br>ii.若y_i=-1,则\vec{x_i}=\left[\begin{matrix}-x_i\\-1\end{matrix}\right]<br>$$</p>
-<p>原任务是寻找(W,b)使得对i=1…N,有：<br>$$<br>i.若y_i=+1,则W^TX_i+b&gt;0<br>$$</p>
-<p>$$<br>ii.若y_i=-1,则W^TX_i+b&lt;0<br>$$</p>
-<p>简化为<br>$$<br>寻找W=\left[\begin{matrix}W\\b\end{matrix}\right],使得对i=1…N,有W^T\vec x_i&gt;0<br>$$</p>
-<h4 id="感知器算法的收敛定理"><a href="#感知器算法的收敛定理" class="headerlink" title="感知器算法的收敛定理"></a>感知器算法的收敛定理</h4><p>$$<br>对于N个增广向量\vec x_1,\vec x_2,…,\vec x_N,如果存在一个权重向量w_{opt},使得对于每一个i=1…N,有w_{opt}^T\vec x_i&gt;0<br>$$</p>
-<p>那么运用上述感知器算法有<br>$$<br>在有限步内找到一个w,使得对于所有i=1..N,有w^T\vec x_i&gt;0,这个w不一定是w_{opt}<br>$$</p>
-<h5 id="过拟合"><a href="#过拟合" class="headerlink" title="过拟合"></a>过拟合</h5><p>预测函数复杂度高于训练数据复杂度的情况，会出现测试数据预测不准确的情况。</p>
+<h4 id="一些定义"><a href="#一些定义" class="headerlink" title="一些定义"></a>一些定义</h4><p>对于某个Xi,我们定义它的增广向量如下</p>
+<script type="math/tex; mode=display">
+i.若y_i=+1,则\vec{x_i}=\left[\begin{matrix}x_i\\\\1\end{matrix}\right]</script><script type="math/tex; mode=display">
+ii.若y_i=-1,则\vec{x_i}=\left[\begin{matrix}-x_i\\\\-1\end{matrix}\right]</script><p>原任务是寻找(W,b)使得对i=1…N,有：</p>
+<script type="math/tex; mode=display">
+i.若y_i=+1,则W^TX_i+b>0</script><script type="math/tex; mode=display">
+ii.若y_i=-1,则W^TX_i+b<0</script><p>简化为</p>
+<script type="math/tex; mode=display">
+寻找W=\left[\begin{matrix}W\\\\b\end{matrix}\right],使得对i=1...N,有W^T\vec x_i>0</script><h4 id="感知器算法的收敛定理"><a href="#感知器算法的收敛定理" class="headerlink" title="感知器算法的收敛定理"></a>感知器算法的收敛定理</h4><script type="math/tex; mode=display">
+对于N个增广向量\vec x_1,\vec x_2,...,\vec x_N,如果存在一个权重向量w_{opt},使得对于每一个i=1...N,有w_{opt}^T\vec x_i>0</script><p>那么运用上述感知器算法有</p>
+<script type="math/tex; mode=display">
+在有限步内找到一个w,使得对于所有i=1..N,有w^T\vec x_i>0,这个w不一定是w_{opt}</script><h5 id="过拟合"><a href="#过拟合" class="headerlink" title="过拟合"></a>过拟合</h5><p>预测函数复杂度高于训练数据复杂度的情况，会出现测试数据预测不准确的情况。</p>
 <h5 id="欠拟合"><a href="#欠拟合" class="headerlink" title="欠拟合"></a>欠拟合</h5><p>欠拟合是指模型拟合程度不高，数据距离拟合曲线较远，或指模型没有很好地捕捉到数据特征，不能够很好地拟合数据</p>
-<h3 id="多层神经网络"><a href="#多层神经网络" class="headerlink" title="多层神经网络"></a>多层神经网络</h3><p><img src="https://i.loli.net/2021/04/11/1hr9LSqdQXWDMiA.jpg" alt="shenjingwangluo.jpg"><br>$$<br>a_1=w_{11}x_1+w_{12}x_2+b_1\quad(第一个神经元)\\<br>a_2=w_{21}x_1+w_{22}x_2+b_2\quad(第二个神经元)\\<br>z_1=\varphi(a_1)\quad(非线性函数)\\<br>z_2=\varphi(a_2)\quad(非线性函数)\\<br>y=w_1z_1+w_2z_2+b_3\quad(第三个神经元)<br>$$<br>待求参数为<br>$$<br>第一层网络中的(w_{11},w_{12},w_{21},w_{22},b_1,b_2)\\<br>第二层网络中的(w_1,w_2,b_3)<br>$$<br>而我们要加入非线性函数是阶跃函数</p>
+<h3 id="多层神经网络"><a href="#多层神经网络" class="headerlink" title="多层神经网络"></a>多层神经网络</h3><p><img src="https://i.loli.net/2021/04/11/1hr9LSqdQXWDMiA.jpg" alt="shenjingwangluo.jpg"></p>
+<script type="math/tex; mode=display">
+a_1=w_{11}x_1+w_{12}x_2+b_1\quad(第一个神经元)\\\\
+a_2=w_{21}x_1+w_{22}x_2+b_2\quad(第二个神经元)\\\\
+z_1=\varphi(a_1)\quad(非线性函数)\\\\
+z_2=\varphi(a_2)\quad(非线性函数)\\\\
+y=w_1z_1+w_2z_2+b_3\quad(第三个神经元)</script><p>待求参数为</p>
+<script type="math/tex; mode=display">
+第一层网络中的(w_{11},w_{12},w_{21},w_{22},b_1,b_2)\\\\
+第二层网络中的(w_1,w_2,b_3)</script><p>而我们要加入非线性函数是阶跃函数</p>
 <p><img src="https://i.loli.net/2021/04/11/3WPHXiRZmuB1Ipt.jpg" alt="zhengming.jpg"></p>
 <p>如果特征空间为一个4变形，那么只需要在第一层增加一个神经元，并把第二层偏置设置为-3.5</p>
 <h3 id="梯度下降法"><a href="#梯度下降法" class="headerlink" title="梯度下降法"></a>梯度下降法</h3><p>假定神经网络设置已经确定的前提下，如何优化网络中待求的参数</p>
 <p><img src="https://i.loli.net/2021/04/12/OFRG2usgWU5bfXN.jpg" alt="shenjingwangluoqiucan.jpg"></p>
-<p>可以定义一个目标函数为<br>$$<br>Minimize:E(w,b)=E_{(X,Y)}[(Y-y)^2]\\<br>E_{(X,Y)}:遍历训练样本及标签的数学期望<br>$$</p>
-<h4 id="梯度下降法-1"><a href="#梯度下降法-1" class="headerlink" title="梯度下降法"></a>梯度下降法</h4><p>求解局部极小值<br>$$<br>1.随机选取w和b的初始值(w^{(0)},b^{(0)})\\2.应用迭代算法求目标函数的局部极值:\\<br>    \quad 在第n步迭代中，w和b的更新公式如下(\alpha为学习率):\\<br>        w^{(n+1)}=w^{(n)}-\alpha\left. \frac{dE}{dw} \right| _{w^{(n)},b^{(n)} }\\<br>        b^{(n+1)}=b^{(n)}-\alpha\left. \frac{dE}{db} \right| _{w^{(n)},b^{(n)} } \\<br>$$</p>
-<h3 id="后向传播算法"><a href="#后向传播算法" class="headerlink" title="后向传播算法"></a>后向传播算法</h3><p>简化求解梯度下降法中偏导数的计算</p>
+<p>可以定义一个目标函数为</p>
+<script type="math/tex; mode=display">
+Minimize:E(w,b)=E_{(X,Y)}[(Y-y)^2]\\\\
+E_{(X,Y)}:遍历训练样本及标签的数学期望</script><h4 id="梯度下降法-1"><a href="#梯度下降法-1" class="headerlink" title="梯度下降法"></a>梯度下降法</h4><p>求解局部极小值</p>
+<script type="math/tex; mode=display">
+1.随机选取w和b的初始值(w^{(0)},b^{(0)})\\\\2.应用迭代算法求目标函数的局部极值:\\\\
+    \quad 在第n步迭代中，w和b的更新公式如下(\alpha为学习率):\\\\
+        w^{(n+1)}=w^{(n)}-\alpha\left. \frac{dE}{dw} \right| _{w^{(n)},b^{(n)} }\\\\
+        b^{(n+1)}=b^{(n)}-\alpha\left. \frac{dE}{db} \right| _{w^{(n)},b^{(n)} } \\\\</script><h3 id="后向传播算法"><a href="#后向传播算法" class="headerlink" title="后向传播算法"></a>后向传播算法</h3><p>简化求解梯度下降法中偏导数的计算</p>
 <p><img src="https://i.loli.net/2021/04/12/ZvlRtj6npY9b1fM.jpg" alt="tiduxiajiang9gepiandao.jpg"></p>
 <p>这九个偏导数相互关联，利用链式求导法则求导</p>
 <p><img src="https://i.loli.net/2021/04/12/JQ8GnbeElCm7to2.jpg" alt="diyibu.jpg"></p>
@@ -352,7 +412,9 @@
 <p><img src="https://i.loli.net/2021/04/13/E6rIHfYhGcUqWbX.jpg" alt="zhengzexiang.jpg"></p>
 <p>2.训练数据的归一化</p>
 <p><img src="https://i.loli.net/2021/04/13/ZCq3Jr51X4bfSLR.jpg" alt="guiyihua.jpg"></p>
-<p>3.参数w和b的初始化<br>$$<br>我们要使W^TX+b\quad 一开始就在0的附近<br>$$<br><img src="https://i.loli.net/2021/04/13/JEpaCVx3siFoySG.jpg" alt="canshuchushihau.jpg"></p>
+<p>3.参数w和b的初始化</p>
+<script type="math/tex; mode=display">
+我们要使W^TX+b\quad 一开始就在0的附近</script><p><img src="https://i.loli.net/2021/04/13/JEpaCVx3siFoySG.jpg" alt="canshuchushihau.jpg"></p>
 
       
 
@@ -761,6 +823,6 @@ MathJax.Hub.Queue(function() {
             all[i].SourceElement().parentNode.className += ' has-jax';
     });
 </script>
-<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+<script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
 </body>
 </html>

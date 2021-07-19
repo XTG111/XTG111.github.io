@@ -164,39 +164,172 @@
       
         <p>小子样试验</p>
 <span id="more"></span>
-
 <h3 id="半经验的可靠性评估方法"><a href="#半经验的可靠性评估方法" class="headerlink" title="半经验的可靠性评估方法"></a>半经验的可靠性评估方法</h3><p>略《机械产品可靠性设计与实验》</p>
-<h3 id="分散系数法"><a href="#分散系数法" class="headerlink" title="分散系数法"></a>分散系数法</h3><h4 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h4><p>由疲劳寿命分布及一定的可靠度和置信度要求给出疲劳寿命分散系数，随着实验条件真实程度的改善、设计技术与工艺技术的改善，分散系数不断降低，对于小子样试验寿命，国内外广泛采用基于参数区间估计的分散系数方法进行可靠性评估。疲劳寿命分散系数SF是试验寿命Nt与安全寿命估计值的比值<br>$$<br>S_F=\frac{N_t}{N_{p,\gamma}}\<br>N_t一般指最小寿命、最大寿命或者中值寿命；N_{p.\gamma}为在一定可靠度P和置信度\gamma下的寿命估计值<br>$$</p>
-<h4 id="数学模型"><a href="#数学模型" class="headerlink" title="数学模型"></a>数学模型</h4><h5 id="对数正态分布"><a href="#对数正态分布" class="headerlink" title="对数正态分布"></a>对数正态分布</h5><ol>
-<li><p>基于中值寿命N50的分散系数<br>$$<br>\begin{aligned}<br>&amp;假设试验寿命服从对数正态分布，母体标准差\sigma已知。其子样子数为n的对数寿命均值\overline{\lg{N}}也为正态分布，即\<br>&amp;\quad \quad \quad \quad \quad \quad \quad \quad \quad \quad \quad \quad \quad \quad \quad \quad \quad \quad \quad \quad \overline{\lg{N}}\sim N(\mu,\frac{\sigma^2}{n})\<br>&amp;式中:(\mu,\sigma)为母体正态分布变量x=\lg{N}的均值和标准差,显然有\<br>&amp;\quad \quad \quad \quad \quad \quad \quad \quad \quad \quad \quad \quad \quad \quad \quad \quad U=\frac{(\lg(N)-\mu)\sqrt{n}}{\sigma}\sim N(0,1)\<br>&amp;对于给定置信度\gamma,变量U满足以下概率式\<br>&amp;\quad \quad \quad \quad \quad \quad \quad \quad \quad \quad \quad \quad \quad \quad \quad \quad \quad \quad \quad \quad P(U\leq u_\gamma)=\gamma\<br>&amp;u_\gamma=\Phi^{-1}(\gamma)为置信度\gamma的标准正态分布的下侧分位数,根据上述概率式,有\<br>&amp;\quad \quad \quad \quad \quad \quad \quad \quad \quad \quad \quad \quad \quad \quad \quad \quad \lg{N}-\hat{\mu}\leq\Phi^{-1}(\gamma)\frac{\sigma}{\sqrt{n}}\<br>&amp;在(-3\sigma,+3\sigma)范围内,对数正态分布的母体标准差可表示为\<br>&amp;\quad \quad \quad \quad \quad \quad \quad \quad \quad \quad \quad \quad \quad \quad \quad \quad \sigma=\frac{(\lg{N_{0.13}}-\lg{N_{99.87}})}{6}\<br>&amp;其中\lg{N_{0.13}}为可靠度R=0.13%的寿命,\lg{N_{99.87}}为可靠度R=99.87%的寿命,对数寿命均值估计量与对数安全寿\<br>&amp;命的关系可表示为\<br>&amp;\quad \quad \quad \quad\quad \quad \quad \quad\quad \quad \quad \quad\quad \quad \quad \quad\quad \quad \quad \quad\hat{\mu}=\lg{N}-u_p\sigma\<br>&amp;u_p为可靠度为p时的上侧分位数;u_p=\Phi^{-1}(1-p)=-\Phi^{-1}(p),综上有如下\<br>&amp;\quad \quad \quad \quad\quad \quad \quad \quad\quad \quad \quad \quad \quad \quad \quad \quad \overline{\lg{N}}-\lg{N_p}\leq\sigma(\frac{\Phi^{-1}(\gamma)}{\sqrt{n}}+\Phi^{-1}(p))\<br>&amp;\quad \quad \quad \quad\quad \quad \quad \quad\quad \quad \quad \quad \quad \quad \quad \quad \quad \quad \quad \quad \frac{N_{50}}{N_p}\leq10^{\sigma(\frac{\Phi^{-1}(\gamma)}{\sqrt{n}}+\Phi^{-1}(p))}\<br>&amp;可以得到基于子样中值寿命的分散系数为S_F=10^{\sigma(\frac{\Phi^{-1}(\gamma)}{\sqrt{n}}+\Phi^{-1}(p))}</p>
-<p>\end{aligned}<br>$$</p>
-</li>
-<li><p>基于最小寿命N1的分散系数<br>$$<br>\begin{aligned}<br>&amp;假设试验寿命服从对数正态分布，母体标准差\sigma已知。对于给定置信度,第k个次序统计量\lg{N_{k}}的转换变量\<br>&amp;U_k=\frac{(lg_{N_k}-\mu)}{\sigma}也为标准正态分布\<br>&amp;对于给定置信度\gamma,变量U_k满足以下概率式\<br>&amp;\quad \quad \quad \quad \quad \quad \quad \quad \quad \quad \quad \quad \quad \quad \quad \quad \quad \quad \quad \quad P(U_k\leq u_\gamma)=\gamma\<br>&amp;u_\gamma=\Phi^{-1}(\gamma)为置信度\gamma的标准正态分布的下侧分位数,根据上述概率式,有\<br>&amp;\quad \quad \quad \quad \quad \quad \quad \quad \quad \quad \quad \quad \quad \quad  \lg{N_{(k)}}-\hat{\mu}\leq\Phi^{-1}(\gamma)\sigma=\Phi^{-1}(F(u_\gamma))\sigma\<br>&amp;最小次序统计量的分布函数为\<br>&amp;\quad \quad \quad \quad \quad \quad \quad \quad \quad \quad \quad \quad \quad \quad \quad \quad F_{N_{(1)}}(u)=1-[1-F(u)]^n=\gamma\<br>&amp;在(-3\sigma,+3\sigma)范围内,对数正态分布的母体标准差可表示为\<br>&amp;\quad \quad \quad \quad \quad \quad \quad \quad \quad \quad \quad \quad \quad \quad \quad \quad \sigma=\frac{(\lg{N_{0.13}}-\lg{N_{99.87}})}{6}\<br>&amp;其中\lg{N_{0.13}}为可靠度R=0.13%的寿命,\lg{N_{99.87}}为可靠度R=99.87%的寿命,对数寿命均值估计量与对数安全寿\<br>&amp;命的关系可表示为\<br>&amp;\quad \quad \quad \quad\quad \quad \quad \quad\quad \quad \quad \quad\quad \quad \quad \quad\quad \quad \quad \quad\hat{\mu}=\lg{N}-u_p\sigma\<br>&amp;u_p为可靠度为p时的上侧分位数;u_p=\Phi^{-1}(1-p)=-\Phi^{-1}(p),综上有如下\<br>&amp;\quad \quad \quad \quad\quad \quad \quad \quad\quad \quad \quad \quad \quad \quad \quad \quad \lg{N_{(1)}}-\lg{N_p}\leq\sigma(\Phi^{-1}(1-\sqrt[n]{1-\gamma})+\Phi^{-1}(p))\<br>&amp;\quad \quad \quad \quad\quad \quad \quad \quad\quad \quad \quad \quad \quad \quad \quad \quad \quad \quad \quad \quad \frac{N_{(1)}}{N_p}\leq10^{\sigma(\Phi^{-1}(1-\sqrt[n]{1-\gamma})+\Phi^{-1}(p))}\<br>&amp;可以得到基于子样最小寿命的分散系数为S_F^{(1)}=10^{\sigma(\Phi^{-1}(1-\sqrt[n]{1-\gamma})+\Phi^{-1}(p))}</p>
-<p>\end{aligned}<br>$$</p>
-</li>
-<li><p>基于最大寿命Nn的分散系数<br>$$<br>\begin{aligned}<br>&amp;假设试验寿命服从对数正态分布，母体标准差\sigma已知。对于给定置信度,第k个次序统计量\lg{N_{k}}的转换变量\<br>&amp;U_k=\frac{(lg_{N_k}-\mu)}{\sigma}也为标准正态分布\<br>&amp;对于给定置信度\gamma,变量U_k满足以下概率式\<br>&amp;\quad \quad \quad \quad \quad \quad \quad \quad \quad \quad \quad \quad \quad \quad \quad \quad \quad \quad \quad \quad P(U_k\leq u_\gamma)=\gamma\<br>&amp;u_\gamma=\Phi^{-1}(\gamma)为置信度\gamma的标准正态分布的下侧分位数,根据上述概率式,有\<br>&amp;\quad \quad \quad \quad \quad \quad \quad \quad \quad \quad \quad \quad \quad \quad  \lg{N_{(k)}}-\hat{\mu}\leq\Phi^{-1}(\gamma)\sigma=\Phi^{-1}(F(u_\gamma))\sigma\<br>&amp;最大次序统计量的分布函数为\<br>&amp;\quad \quad \quad \quad \quad \quad \quad \quad \quad \quad \quad \quad \quad \quad \quad \quad F_{N_{(n)}}(u)=[F(u)]^n=\gamma\<br>&amp;在(-3\sigma,+3\sigma)范围内,对数正态分布的母体标准差可表示为\<br>&amp;\quad \quad \quad \quad \quad \quad \quad \quad \quad \quad \quad \quad \quad \quad \quad \quad \sigma=\frac{(\lg{N_{0.13}}-\lg{N_{99.87}})}{6}\<br>&amp;其中\lg{N_{0.13}}为可靠度R=0.13%的寿命,\lg{N_{99.87}}为可靠度R=99.87%的寿命,对数寿命均值估计量与对数安全寿\<br>&amp;命的关系可表示为\<br>&amp;\quad \quad \quad \quad\quad \quad \quad \quad\quad \quad \quad \quad\quad \quad \quad \quad\quad \quad \quad \quad\hat{\mu}=\lg{N}-u_p\sigma\<br>&amp;u_p为可靠度为p时的上侧分位数;u_p=\Phi^{-1}(1-p)=-\Phi^{-1}(p),综上有如下\<br>&amp;\quad \quad \quad \quad\quad \quad \quad \quad\quad \quad \quad \quad \quad \quad \quad \quad \lg{N_{(n)}}-\lg{N_p}\leq\sigma(\Phi^{-1}(\sqrt[n]{\gamma})+\Phi^{-1}(p))\<br>&amp;\quad \quad \quad \quad\quad \quad \quad \quad\quad \quad \quad \quad \quad \quad \quad \quad \quad \quad \quad \quad \frac{N_{(n)}}{N_p}\leq10^{\sigma(\Phi^{-1}(\sqrt[n]{\gamma})+\Phi^{-1}(p))}\<br>&amp;可以得到基于子样最大寿命的分散系数为S_F^{(n)}=10^{\sigma(\Phi^{-1}(\sqrt[n]{\gamma})+\Phi^{-1}(p))}</p>
-<p>\end{aligned}<br>$$</p>
-</li>
+<h3 id="分散系数法"><a href="#分散系数法" class="headerlink" title="分散系数法"></a>分散系数法</h3><h4 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h4><p>由疲劳寿命分布及一定的可靠度和置信度要求给出疲劳寿命分散系数，随着实验条件真实程度的改善、设计技术与工艺技术的改善，分散系数不断降低，对于小子样试验寿命，国内外广泛采用基于参数区间估计的分散系数方法进行可靠性评估。疲劳寿命分散系数SF是试验寿命Nt与安全寿命估计值的比值</p>
+<script type="math/tex; mode=display">
+S_F=\frac{N_t}{N_{p,\gamma}}\\
+N_t一般指最小寿命、最大寿命或者中值寿命；N_{p.\gamma}为在一定可靠度P和置信度\gamma下的寿命估计值</script><h4 id="数学模型"><a href="#数学模型" class="headerlink" title="数学模型"></a>数学模型</h4><h5 id="对数正态分布"><a href="#对数正态分布" class="headerlink" title="对数正态分布"></a>对数正态分布</h5><ol>
+<li><p>基于中值寿命N50的分散系数</p>
+<script type="math/tex; mode=display">
+\begin{aligned}
+&假设试验寿命服从对数正态分布，母体标准差\sigma已知。其子样子数为n的对数寿命均值\overline{\lg{N}}也为正态分布，即\\
+&\quad \quad \quad \quad \quad \quad \quad \quad \quad \quad \quad \quad \quad \quad \quad \quad \quad \quad \quad \quad \overline{\lg{N}}\sim N(\mu,\frac{\sigma^2}{n})\\
+&式中:(\mu,\sigma)为母体正态分布变量x=\lg{N}的均值和标准差,显然有\\
+&\quad \quad \quad \quad \quad \quad \quad \quad \quad \quad \quad \quad \quad \quad \quad \quad U=\frac{(\lg(N)-\mu)\sqrt{n}}{\sigma}\sim N(0,1)\\
+&对于给定置信度\gamma,变量U满足以下概率式\\
+&\quad \quad \quad \quad \quad \quad \quad \quad \quad \quad \quad \quad \quad \quad \quad \quad \quad \quad \quad \quad P(U\leq u_\gamma)=\gamma\\
+&u_\gamma=\Phi^{-1}(\gamma)为置信度\gamma的标准正态分布的下侧分位数,根据上述概率式,有\\
+&\quad \quad \quad \quad \quad \quad \quad \quad \quad \quad \quad \quad \quad \quad \quad \quad \lg{N}-\hat{\mu}\leq\Phi^{-1}(\gamma)\frac{\sigma}{\sqrt{n}}\\
+&在(-3\sigma,+3\sigma)范围内,对数正态分布的母体标准差可表示为\\
+&\quad \quad \quad \quad \quad \quad \quad \quad \quad \quad \quad \quad \quad \quad \quad \quad \sigma=\frac{(\lg{N_{0.13}}-\lg{N_{99.87}})}{6}\\
+&其中\lg{N_{0.13}}为可靠度R=0.13\%的寿命,\lg{N_{99.87}}为可靠度R=99.87\%的寿命,对数寿命均值估计量与对数安全寿\\
+&命的关系可表示为\\
+&\quad \quad \quad \quad\quad \quad \quad \quad\quad \quad \quad \quad\quad \quad \quad \quad\quad \quad \quad \quad\hat{\mu}=\lg{N}-u_p\sigma\\
+&u_p为可靠度为p时的上侧分位数;u_p=\Phi^{-1}(1-p)=-\Phi^{-1}(p),综上有如下\\
+&\quad \quad \quad \quad\quad \quad \quad \quad\quad \quad \quad \quad \quad \quad \quad \quad \overline{\lg{N}}-\lg{N_p}\leq\sigma(\frac{\Phi^{-1}(\gamma)}{\sqrt{n}}+\Phi^{-1}(p))\\
+&\quad \quad \quad \quad\quad \quad \quad \quad\quad \quad \quad \quad \quad \quad \quad \quad \quad \quad \quad \quad \frac{N_{50}}{N_p}\leq10^{\sigma(\frac{\Phi^{-1}(\gamma)}{\sqrt{n}}+\Phi^{-1}(p))}\\
+&可以得到基于子样中值寿命的分散系数为S_F=10^{\sigma(\frac{\Phi^{-1}(\gamma)}{\sqrt{n}}+\Phi^{-1}(p))}
+
+\end{aligned}</script></li>
+<li><p>基于最小寿命N1的分散系数</p>
+<script type="math/tex; mode=display">
+\begin{aligned}
+&假设试验寿命服从对数正态分布，母体标准差\sigma已知。对于给定置信度,第k个次序统计量\lg{N_{k}}的转换变量\\
+&U_k=\frac{(lg_{N_k}-\mu)}{\sigma}也为标准正态分布\\
+&对于给定置信度\gamma,变量U_k满足以下概率式\\
+&\quad \quad \quad \quad \quad \quad \quad \quad \quad \quad \quad \quad \quad \quad \quad \quad \quad \quad \quad \quad P(U_k\leq u_\gamma)=\gamma\\
+&u_\gamma=\Phi^{-1}(\gamma)为置信度\gamma的标准正态分布的下侧分位数,根据上述概率式,有\\
+&\quad \quad \quad \quad \quad \quad \quad \quad \quad \quad \quad \quad \quad \quad  \lg{N_{(k)}}-\hat{\mu}\leq\Phi^{-1}(\gamma)\sigma=\Phi^{-1}(F(u_\gamma))\sigma\\
+&最小次序统计量的分布函数为\\
+&\quad \quad \quad \quad \quad \quad \quad \quad \quad \quad \quad \quad \quad \quad \quad \quad F_{N_{(1)}}(u)=1-[1-F(u)]^n=\gamma\\
+&在(-3\sigma,+3\sigma)范围内,对数正态分布的母体标准差可表示为\\
+&\quad \quad \quad \quad \quad \quad \quad \quad \quad \quad \quad \quad \quad \quad \quad \quad \sigma=\frac{(\lg{N_{0.13}}-\lg{N_{99.87}})}{6}\\
+&其中\lg{N_{0.13}}为可靠度R=0.13\%的寿命,\lg{N_{99.87}}为可靠度R=99.87\%的寿命,对数寿命均值估计量与对数安全寿\\
+&命的关系可表示为\\
+&\quad \quad \quad \quad\quad \quad \quad \quad\quad \quad \quad \quad\quad \quad \quad \quad\quad \quad \quad \quad\hat{\mu}=\lg{N}-u_p\sigma\\
+&u_p为可靠度为p时的上侧分位数;u_p=\Phi^{-1}(1-p)=-\Phi^{-1}(p),综上有如下\\
+&\quad \quad \quad \quad\quad \quad \quad \quad\quad \quad \quad \quad \quad \quad \quad \quad \lg{N_{(1)}}-\lg{N_p}\leq\sigma(\Phi^{-1}(1-\sqrt[n]{1-\gamma})+\Phi^{-1}(p))\\
+&\quad \quad \quad \quad\quad \quad \quad \quad\quad \quad \quad \quad \quad \quad \quad \quad \quad \quad \quad \quad \frac{N_{(1)}}{N_p}\leq10^{\sigma(\Phi^{-1}(1-\sqrt[n]{1-\gamma})+\Phi^{-1}(p))}\\
+&可以得到基于子样最小寿命的分散系数为S_F^{(1)}=10^{\sigma(\Phi^{-1}(1-\sqrt[n]{1-\gamma})+\Phi^{-1}(p))}
+
+\end{aligned}</script></li>
+<li><p>基于最大寿命Nn的分散系数</p>
+<script type="math/tex; mode=display">
+\begin{aligned}
+&假设试验寿命服从对数正态分布，母体标准差\sigma已知。对于给定置信度,第k个次序统计量\lg{N_{k}}的转换变量\\
+&U_k=\frac{(lg_{N_k}-\mu)}{\sigma}也为标准正态分布\\
+&对于给定置信度\gamma,变量U_k满足以下概率式\\
+&\quad \quad \quad \quad \quad \quad \quad \quad \quad \quad \quad \quad \quad \quad \quad \quad \quad \quad \quad \quad P(U_k\leq u_\gamma)=\gamma\\
+&u_\gamma=\Phi^{-1}(\gamma)为置信度\gamma的标准正态分布的下侧分位数,根据上述概率式,有\\
+&\quad \quad \quad \quad \quad \quad \quad \quad \quad \quad \quad \quad \quad \quad  \lg{N_{(k)}}-\hat{\mu}\leq\Phi^{-1}(\gamma)\sigma=\Phi^{-1}(F(u_\gamma))\sigma\\
+&最大次序统计量的分布函数为\\
+&\quad \quad \quad \quad \quad \quad \quad \quad \quad \quad \quad \quad \quad \quad \quad \quad F_{N_{(n)}}(u)=[F(u)]^n=\gamma\\
+&在(-3\sigma,+3\sigma)范围内,对数正态分布的母体标准差可表示为\\
+&\quad \quad \quad \quad \quad \quad \quad \quad \quad \quad \quad \quad \quad \quad \quad \quad \sigma=\frac{(\lg{N_{0.13}}-\lg{N_{99.87}})}{6}\\
+&其中\lg{N_{0.13}}为可靠度R=0.13\%的寿命,\lg{N_{99.87}}为可靠度R=99.87\%的寿命,对数寿命均值估计量与对数安全寿\\
+&命的关系可表示为\\
+&\quad \quad \quad \quad\quad \quad \quad \quad\quad \quad \quad \quad\quad \quad \quad \quad\quad \quad \quad \quad\hat{\mu}=\lg{N}-u_p\sigma\\
+&u_p为可靠度为p时的上侧分位数;u_p=\Phi^{-1}(1-p)=-\Phi^{-1}(p),综上有如下\\
+&\quad \quad \quad \quad\quad \quad \quad \quad\quad \quad \quad \quad \quad \quad \quad \quad \lg{N_{(n)}}-\lg{N_p}\leq\sigma(\Phi^{-1}(\sqrt[n]{\gamma})+\Phi^{-1}(p))\\
+&\quad \quad \quad \quad\quad \quad \quad \quad\quad \quad \quad \quad \quad \quad \quad \quad \quad \quad \quad \quad \frac{N_{(n)}}{N_p}\leq10^{\sigma(\Phi^{-1}(\sqrt[n]{\gamma})+\Phi^{-1}(p))}\\
+&可以得到基于子样最大寿命的分散系数为S_F^{(n)}=10^{\sigma(\Phi^{-1}(\sqrt[n]{\gamma})+\Phi^{-1}(p))}
+
+\end{aligned}</script></li>
 </ol>
 <h5 id="双参数威布尔分布"><a href="#双参数威布尔分布" class="headerlink" title="双参数威布尔分布"></a>双参数威布尔分布</h5><ol>
-<li><p>基于最小寿命N1的分散系数<br>$$<br>\begin{aligned}<br>&amp;假设试验寿命服从双参数威布尔分布，那么其概率分布函数为\<br>&amp;\quad \quad \quad \quad \quad \quad \quad \quad F(N)=1-e^{-(\frac{N}{\beta})^{\alpha}}\<br>&amp;其中\alpha为形状参数;\beta为特征寿命;最小次序统计量N_{(1)}的分布函数为\<br>&amp;\quad \quad \quad \quad \quad \quad \quad \quad F_{N_{(1)}}(N)=1-[1-F(N)]^n\<br>&amp;所以有F_{N_{(1)}}(N)=1-[e^{-(\frac{N}{\beta})^{\alpha}}]^n=\gamma\<br>&amp;对于给定置信度\gamma，N_{(1)}满足如下概率条件:\<br>&amp;\quad \quad \quad \quad \quad \quad \quad \quad P{N_{(1)}\leq N}=\gamma\<br>&amp;有N_{min}=N_1=[\frac{-\ln(1-\gamma)}{n}]^{\frac{1}{\alpha}}\beta\<br>&amp;对于可靠度为P的疲劳寿命威布尔分布表达式为\<br>&amp;\quad \quad \quad \quad P=e^{-(\frac{N_p}{\beta})^{\alpha}}\Rightarrow N_p=(-\ln P)^{\frac{1}{\alpha}}\beta\<br>&amp;基于最小寿命系数的分散系数为\<br>&amp;\quad \quad \quad \quad \quad \quad \quad \quad S_F^{(1)}=\frac{N_{min}}{N_p}=(\frac{\ln(1-\gamma)}{n.\ln P})^{\frac{1}{\alpha}}<br>\end{aligned}<br>$$</p>
-</li>
-<li><p>基于最大寿命Nn的分散系数<br>$$<br>\begin{aligned}<br>&amp;假设试验寿命服从双参数威布尔分布，那么其概率分布函数为\<br>&amp;\quad \quad \quad \quad \quad \quad \quad \quad F(N)=1-e^{-(\frac{N}{\beta})^{\alpha}}\<br>&amp;其中\alpha为形状参数;\beta为特征寿命;最大次序统计量N_{(1)}的分布函数为\<br>&amp;\quad \quad \quad \quad \quad \quad \quad \quad F_{N_{(n)}}(N)=[F(N)]^n\<br>&amp;所以有F_{N_{(n)}}(N)=[1-e^{-(\frac{N}{\beta})^{\alpha}}]^n=\gamma\<br>&amp;对于给定置信度\gamma，N_{(n)}满足如下概率条件:\<br>&amp;\quad \quad \quad \quad \quad \quad \quad \quad P{N_{(n)}\geq N}=\gamma\<br>&amp;有N_{max}=N_n=[{-\ln(1-\sqrt[n]\gamma)}]^{\frac{1}{\alpha}}\beta\<br>&amp;对于可靠度为P的疲劳寿命威布尔分布表达式为\<br>&amp;\quad \quad \quad \quad P=e^{-(\frac{N_p}{\beta})^{\alpha}}\Rightarrow N_p=(-\ln P)^{\frac{1}{\alpha}}\beta\<br>&amp;基于最小寿命系数的分散系数为\<br>&amp;\quad \quad \quad \quad \quad \quad \quad \quad S_F^{(n)}=\frac{N_{min}}{N_p}=(\frac{\ln(1-\sqrt[n]\gamma)}{\ln P})^{\frac{1}{\alpha}}<br>\end{aligned}<br>$$</p>
-</li>
+<li><p>基于最小寿命N1的分散系数</p>
+<script type="math/tex; mode=display">
+\begin{aligned}
+&假设试验寿命服从双参数威布尔分布，那么其概率分布函数为\\
+&\quad \quad \quad \quad \quad \quad \quad \quad F(N)=1-e^{-(\frac{N}{\beta})^{\alpha}}\\
+&其中\alpha为形状参数;\beta为特征寿命;最小次序统计量N_{(1)}的分布函数为\\
+&\quad \quad \quad \quad \quad \quad \quad \quad F_{N_{(1)}}(N)=1-[1-F(N)]^n\\
+&所以有F_{N_{(1)}}(N)=1-[e^{-(\frac{N}{\beta})^{\alpha}}]^n=\gamma\\
+&对于给定置信度\gamma，N_{(1)}满足如下概率条件:\\
+&\quad \quad \quad \quad \quad \quad \quad \quad P\{N_{(1)}\leq N\}=\gamma\\
+&有N_{min}=N_1=[\frac{-\ln(1-\gamma)}{n}]^{\frac{1}{\alpha}}\beta\\
+&对于可靠度为P的疲劳寿命威布尔分布表达式为\\
+&\quad \quad \quad \quad P=e^{-(\frac{N_p}{\beta})^{\alpha}}\Rightarrow N_p=(-\ln P)^{\frac{1}{\alpha}}\beta\\
+&基于最小寿命系数的分散系数为\\
+&\quad \quad \quad \quad \quad \quad \quad \quad S_F^{(1)}=\frac{N_{min}}{N_p}=(\frac{\ln(1-\gamma)}{n.\ln P})^{\frac{1}{\alpha}}
+\end{aligned}</script></li>
+<li><p>基于最大寿命Nn的分散系数</p>
+<script type="math/tex; mode=display">
+\begin{aligned}
+&假设试验寿命服从双参数威布尔分布，那么其概率分布函数为\\
+&\quad \quad \quad \quad \quad \quad \quad \quad F(N)=1-e^{-(\frac{N}{\beta})^{\alpha}}\\
+&其中\alpha为形状参数;\beta为特征寿命;最大次序统计量N_{(1)}的分布函数为\\
+&\quad \quad \quad \quad \quad \quad \quad \quad F_{N_{(n)}}(N)=[F(N)]^n\\
+&所以有F_{N_{(n)}}(N)=[1-e^{-(\frac{N}{\beta})^{\alpha}}]^n=\gamma\\
+&对于给定置信度\gamma，N_{(n)}满足如下概率条件:\\
+&\quad \quad \quad \quad \quad \quad \quad \quad P\{N_{(n)}\geq N\}=\gamma\\
+&有N_{max}=N_n=[{-\ln(1-\sqrt[n]\gamma)}]^{\frac{1}{\alpha}}\beta\\
+&对于可靠度为P的疲劳寿命威布尔分布表达式为\\
+&\quad \quad \quad \quad P=e^{-(\frac{N_p}{\beta})^{\alpha}}\Rightarrow N_p=(-\ln P)^{\frac{1}{\alpha}}\beta\\
+&基于最小寿命系数的分散系数为\\
+&\quad \quad \quad \quad \quad \quad \quad \quad S_F^{(n)}=\frac{N_{min}}{N_p}=(\frac{\ln(1-\sqrt[n]\gamma)}{\ln P})^{\frac{1}{\alpha}}
+\end{aligned}</script></li>
 </ol>
 <h3 id="Bootstrap方法"><a href="#Bootstrap方法" class="headerlink" title="Bootstrap方法"></a>Bootstrap方法</h3><p>目的：用现有的样本去模仿未知的分布，充分来利用样本本身的信息，对于总体分布不需要假设</p>
-<h4 id="概念"><a href="#概念" class="headerlink" title="概念"></a>概念</h4><p>一般用于样本数大于等于5的试验<br>$$<br>\begin{aligned}<br>&amp;设随机样本X=[x_1,x_2,…,x_n]是独立同分布样本x_i\sim F(x),i=1,2,…,n。R(X,F)为某个预先选定的随机变量,是关于X和F\<br>&amp;的函数。现要求根据观测样本[x_1,x_2,…,x_n]来估计R(X,F)的分布特征，例如:设\theta=\theta(F)为总体分布F的某个参数,F_n是观测样\<br>&amp;本X的经验分布函数,\hat\theta=\hat\theta(F_n)是\theta的估计,记估计误差为R(X,F)=\hat\theta(F_n)-\theta(F)\approx T_n,现在要由观测样本\<br>&amp;X=[x_1,x_2,…,x_n]估计R(X,F)的分布特征,Bootstrap方法的实质就是一个再抽样过程，计算R(X,F)分布特征的基本步骤如下\<br>&amp;1.根据观测样本X=[x_1,x_2,…,x_n]构造经验分布函数F_n\<br>&amp;2.从F_n中抽取样本X^*=[x_1^<em>，x_2^</em>,…,x_n^*],称其为Boostsrap样本\<br>&amp;3.计算相应的Boostsrap统计量R^*(X^*,F_n),其表达式为:R^*(X^*,F_n)=\hat\theta(F^*_n)-\hat\theta(F_n)\approx R_n,R_n为T_n的Boostsrap统计量\<br>&amp;4.重复过程2，3 N次,即可获得Boostsrap统计量R^*(X^*,F_n)的N个可能取值\<br>&amp;5.用R^*(X^*,F_n)的分布去逼近R(X,F)的分布,即用R_n的分布去近似T_n的分布,可得到参数\theta(F)的N个取值,即可统计求出参数\theta的\<br>&amp;分布及其特征值\</p>
-<p>\end{aligned}<br>$$</p>
-<h4 id="均值与方差"><a href="#均值与方差" class="headerlink" title="均值与方差"></a>均值与方差</h4><p>对于总体方差和样本方差<br>$$<br>1.总体方差:\sigma^2=\frac{\sum(X-\mu)^2}{N}\<br>2.样本方差:S^2=\frac{\sum(X-\overline X)^2}{N-1}<br>$$<br>使用Boostsrap方法估算均值和方差<br>$$<br>\begin{aligned}<br>&amp;1.通过以下式子计算样本X的方差S^2和均值\overline x\<br>&amp;\overline x=\frac{1}{n}\sum_{i=1}^{n}x_i,S^2=\frac{1}{n}\sum_{i=1}^{n}(x_i-\overline x)^2\<br>&amp;2.将x_1,x_2,…,x_n按由小到大排列,利用以下式子确定样本X的经验分布F_n,并从F_n中随机抽样N组自助样本:X^{<em>(1)},X^{</em>(2)},…,X^{<em>(n)}\<br>&amp;其中X^{</em>(1)}=(x_1^{<em>(j)},x_2^{</em>(j)},…,x_n^{<em>(j)})\<br>&amp;F_n(x)=<br>\left{\begin{array}{rcl}<br>0\quad \quad &amp;x&lt;x_i\<br>\frac{i}{n}\quad\quad &amp;x_{(i)}\leq x&lt;x_{(i+1)}\<br>1\quad\quad &amp;x\geq x_{(n)}<br>\end{array}\right.\<br>&amp;3.对于每组X^{</em>(j)},由下式可得到相应的自助统计量式R_{n(1)}^{<em>(j)}和R_{n(2)}^{</em>(j)}\<br>&amp;R_{n(1)}^{<em>}=\overline x^</em>-\overline x;R_{n(2)}^{<em>}=\frac{n}{n-1}{S^</em>}^2-\frac{n}{n-1}{S}^2\<br>&amp;4.对每组R_{n(1)}^{<em>(j)}和R_{n(2)}^{</em>(j)}作为T_{n(1)}和T_{n(2)}的估计,可由下式得到\mu和\sigma^2的各一组估计值\hat\mu_1,\hat\mu_2,…\hat\mu_n和\hat\sigma_1^2,\hat\sigma_2^2,…,\hat\sigma_n^2\<br>&amp;计算式:T_{\mu}=\overline x-\mu,T_{\sigma^2}=\frac{n}{n-1}S^2-\sigma^2\<br>&amp;估计值:\hat\mu_j=\overline x-R_{n(1)}^{<em>(f)},\hat\sigma_f^2=\frac{n}{n-1}S^2-R_{n(2)}^{</em>(f)}\<br>&amp;5.由上面的估计值绘制直方图,分别得到关于\mu和\sigma^2的抽样分布,从而可以对其进行估计,其的Boostsrap为\<br>&amp;\hat\mu_j=\frac{1}{N}\sum_{j=1}^{N}\hat\mu_j,\hat\sigma_j^2=\frac{1}{N}\sum_{j=1}^{N}\hat\sigma_j^2</p>
-<p>\end{aligned}<br>$$</p>
-<h3 id="虚拟增广样本评估"><a href="#虚拟增广样本评估" class="headerlink" title="虚拟增广样本评估"></a>虚拟增广样本评估</h3><p>对于样本数为1~3的试验，进行增广，使得它们能够使用Boostsrap方法来评估</p>
+<h4 id="概念"><a href="#概念" class="headerlink" title="概念"></a>概念</h4><p>一般用于样本数大于等于5的试验</p>
+<script type="math/tex; mode=display">
+\begin{aligned}
+&设随机样本X=[x_1,x_2,...,x_n]是独立同分布样本x_i\sim F(x),i=1,2,...,n。R(X,F)为某个预先选定的随机变量,是关于X和F\\
+&的函数。现要求根据观测样本[x_1,x_2,...,x_n]来估计R(X,F)的分布特征，例如:设\theta=\theta(F)为总体分布F的某个参数,F_n是观测样\\
+&本X的经验分布函数,\hat\theta=\hat\theta(F_n)是\theta的估计,记估计误差为R(X,F)=\hat\theta(F_n)-\theta(F)\approx T_n,现在要由观测样本\\
+&X=[x_1,x_2,...,x_n]估计R(X,F)的分布特征,Bootstrap方法的实质就是一个再抽样过程，计算R(X,F)分布特征的基本步骤如下\\
+&1.根据观测样本X=[x_1,x_2,...,x_n]构造经验分布函数F_n\\
+&2.从F_n中抽取样本X^*=[x_1^*，x_2^*,...,x_n^*],称其为Boostsrap样本\\
+&3.计算相应的Boostsrap统计量R^*(X^*,F_n),其表达式为:R^*(X^*,F_n)=\hat\theta(F^*_n)-\hat\theta(F_n)\approx R_n,R_n为T_n的Boostsrap统计量\\
+&4.重复过程2，3 N次,即可获得Boostsrap统计量R^*(X^*,F_n)的N个可能取值\\
+&5.用R^*(X^*,F_n)的分布去逼近R(X,F)的分布,即用R_n的分布去近似T_n的分布,可得到参数\theta(F)的N个取值,即可统计求出参数\theta的\\
+&分布及其特征值\\
+
+\end{aligned}</script><h4 id="均值与方差"><a href="#均值与方差" class="headerlink" title="均值与方差"></a>均值与方差</h4><p>对于总体方差和样本方差</p>
+<script type="math/tex; mode=display">
+1.总体方差:\sigma^2=\frac{\sum(X-\mu)^2}{N}\\
+2.样本方差:S^2=\frac{\sum(X-\overline X)^2}{N-1}</script><p>使用Boostsrap方法估算均值和方差</p>
+<script type="math/tex; mode=display">
+\begin{aligned}
+&1.通过以下式子计算样本X的方差S^2和均值\overline x\\
+&\overline x=\frac{1}{n}\sum_{i=1}^{n}x_i,S^2=\frac{1}{n}\sum_{i=1}^{n}(x_i-\overline x)^2\\
+&2.将x_1,x_2,...,x_n按由小到大排列,利用以下式子确定样本X的经验分布F_n,并从F_n中随机抽样N组自助样本:X^{*(1)},X^{*(2)},...,X^{*(n)}\\
+&其中X^{*(1)}=(x_1^{*(j)},x_2^{*(j)},...,x_n^{*(j)})\\
+&F_n(x)=
+\left\{\begin{array}{rcl}
+0\quad \quad &x<x_i\\
+\frac{i}{n}\quad\quad &x_{(i)}\leq x<x_{(i+1)}\\
+1\quad\quad &x\geq x_{(n)}
+\end{array}\right.\\
+&3.对于每组X^{*(j)},由下式可得到相应的自助统计量式R_{n(1)}^{*(j)}和R_{n(2)}^{*(j)}\\
+&R_{n(1)}^{*}=\overline x^*-\overline x;R_{n(2)}^{*}=\frac{n}{n-1}{S^*}^2-\frac{n}{n-1}{S}^2\\
+&4.对每组R_{n(1)}^{*(j)}和R_{n(2)}^{*(j)}作为T_{n(1)}和T_{n(2)}的估计,可由下式得到\mu和\sigma^2的各一组估计值\hat\mu_1,\hat\mu_2,...\hat\mu_n和\hat\sigma_1^2,\hat\sigma_2^2,...,\hat\sigma_n^2\\
+&计算式:T_{\mu}=\overline x-\mu,T_{\sigma^2}=\frac{n}{n-1}S^2-\sigma^2\\
+&估计值:\hat\mu_j=\overline x-R_{n(1)}^{*(f)},\hat\sigma_f^2=\frac{n}{n-1}S^2-R_{n(2)}^{*(f)}\\
+&5.由上面的估计值绘制直方图,分别得到关于\mu和\sigma^2的抽样分布,从而可以对其进行估计,其的Boostsrap为\\
+&\hat\mu_j=\frac{1}{N}\sum_{j=1}^{N}\hat\mu_j,\hat\sigma_j^2=\frac{1}{N}\sum_{j=1}^{N}\hat\sigma_j^2
+
+\end{aligned}</script><h3 id="虚拟增广样本评估"><a href="#虚拟增广样本评估" class="headerlink" title="虚拟增广样本评估"></a>虚拟增广样本评估</h3><p>对于样本数为1~3的试验，进行增广，使得它们能够使用Boostsrap方法来评估</p>
 <h4 id="数学模型-1"><a href="#数学模型-1" class="headerlink" title="数学模型"></a>数学模型</h4><p>增广的前提条件</p>
 <ol>
 <li>虚拟增广后的子样均值应与原来的子样均值相等</li>
 <li>虚拟增广后的子样标准差应与类似件的子样标准差相等</li>
 </ol>
-<p>以下为一个例子：n=1的试验，首先我们将试验样本数扩大为13，并假设以往类似件寿命试验估计得到的分布形式为正态分布，可以运用以下近似公式增广原始试验样本<br>$$<br>T=\overline T\pm(a^*(i-1)^b+\xi)\sigma\quad \quad i=1,2,…,\frac{m}{2}\<br>\begin{aligned}<br>&amp;当原始试验样本数为1时，可以近似认为T_0=\overline T;所以\overline T和\sigma已知;T为增广得到的样本;a和b为控制系数,自己设计;\xi为待定系数;\<br>&amp;m为需要增广的样本量的数量,如现在为13-1=12;具体的增广样本如下:\<br>&amp;T_{1,12}=\overline T\mp(a^<em>5^b+\xi)\sigma;T_{2,11}=\overline T\mp(a^</em>4^b+\xi)\sigma;T_{3,10}=\overline T\mp(a^<em>3^b+\xi)\sigma;T_{4,9}=\overline T\mp(a^</em>2^b+\xi)\sigma;\<br>&amp;T_{5,8}=\overline T\mp(a^*+\xi)\sigma;T_{6,17}=\overline T\mp\xi\sigma;T_{13}=\overline T\<br>&amp;\left{\begin{array}{rcl}<br>\overline T &amp;=&amp;\frac{\overline T+\sum_{i=1}^{12}T_i}{13}\<br>\sigma^2 &amp;=&amp;\frac{\sum_{i=1}^{12}(\overline T-T_i)^2+(T_{13}-\overline T)^2}{13-1}<br>\end{array}\right.\<br>&amp;将增广样本带入上述方程组可解得\xi\<br>&amp;\xi=\frac{-2a\sum_{i=1}^{5}i^b+\sqrt{(2a\sum_{i=1}^{5}i^b)^2-24(a^2\sum_{i=1}^{5}i^{2b}-6)}}{12}<br>\end{aligned}<br>$$</p>
-<h3 id="Bayes统计方法"><a href="#Bayes统计方法" class="headerlink" title="Bayes统计方法"></a>Bayes统计方法</h3><h4 id="概述-1"><a href="#概述-1" class="headerlink" title="概述"></a>概述</h4><p>此方法认为θ具有验前概率密度Π(θ)。</p>
+<p>以下为一个例子：n=1的试验，首先我们将试验样本数扩大为13，并假设以往类似件寿命试验估计得到的分布形式为正态分布，可以运用以下近似公式增广原始试验样本</p>
+<script type="math/tex; mode=display">
+T=\overline T\pm(a^*(i-1)^b+\xi)\sigma\quad \quad i=1,2,...,\frac{m}{2}\\
+\begin{aligned}
+&当原始试验样本数为1时，可以近似认为T_0=\overline T;所以\overline T和\sigma已知;T为增广得到的样本;a和b为控制系数,自己设计;\xi为待定系数;\\
+&m为需要增广的样本量的数量,如现在为13-1=12;具体的增广样本如下:\\
+&T_{1,12}=\overline T\mp(a^*5^b+\xi)\sigma;T_{2,11}=\overline T\mp(a^*4^b+\xi)\sigma;T_{3,10}=\overline T\mp(a^*3^b+\xi)\sigma;T_{4,9}=\overline T\mp(a^*2^b+\xi)\sigma;\\
+&T_{5,8}=\overline T\mp(a^*+\xi)\sigma;T_{6,17}=\overline T\mp\xi\sigma;T_{13}=\overline T\\
+&\left\{\begin{array}{rcl}
+\overline T &=&\frac{\overline T+\sum_{i=1}^{12}T_i}{13}\\
+\sigma^2 &=&\frac{\sum_{i=1}^{12}(\overline T-T_i)^2+(T_{13}-\overline T)^2}{13-1}
+\end{array}\right.\\
+&将增广样本带入上述方程组可解得\xi\\
+&\xi=\frac{-2a\sum_{i=1}^{5}i^b+\sqrt{(2a\sum_{i=1}^{5}i^b)^2-24(a^2\sum_{i=1}^{5}i^{2b}-6)}}{12}
+\end{aligned}</script><h3 id="Bayes统计方法"><a href="#Bayes统计方法" class="headerlink" title="Bayes统计方法"></a>Bayes统计方法</h3><h4 id="概述-1"><a href="#概述-1" class="headerlink" title="概述"></a>概述</h4><p>此方法认为θ具有验前概率密度Π(θ)。</p>
 <h4 id="数学描述"><a href="#数学描述" class="headerlink" title="数学描述"></a>数学描述</h4>
       
 
@@ -596,6 +729,6 @@ MathJax.Hub.Queue(function() {
             all[i].SourceElement().parentNode.className += ' has-jax';
     });
 </script>
-<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+<script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
 </body>
 </html>
