@@ -6,15 +6,17 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://example.com">
-  <title>XTG111的杂记</title>
+  <title>小子样试验的可靠性 | XTG111的杂记</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="一个机械学生的计算机学习">
-<meta property="og:type" content="website">
-<meta property="og:title" content="XTG111的杂记">
-<meta property="og:url" content="http://example.com/index.html">
+  <meta name="description" content="小子样试验">
+<meta property="og:type" content="article">
+<meta property="og:title" content="小子样试验的可靠性">
+<meta property="og:url" content="http://example.com/2021/07/19/%E5%B0%8F%E5%AD%90%E6%A0%B7%E8%AF%95%E9%AA%8C%E7%9A%84%E5%8F%AF%E9%9D%A0%E6%80%A7/index.html">
 <meta property="og:site_name" content="XTG111的杂记">
-<meta property="og:description" content="一个机械学生的计算机学习">
+<meta property="og:description" content="小子样试验">
 <meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2021-07-19T13:01:41.000Z">
+<meta property="article:modified_time" content="2021-07-19T13:05:03.700Z">
 <meta property="article:author" content="XTG111">
 <meta name="twitter:card" content="summary">
   
@@ -140,16 +142,14 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-    <article id="post-小子样试验的可靠性" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+            <article id="post-小子样试验的可靠性" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
-    <h1 itemprop="name">
-      <a class="article-title" href="/2021/07/19/%E5%B0%8F%E5%AD%90%E6%A0%B7%E8%AF%95%E9%AA%8C%E7%9A%84%E5%8F%AF%E9%9D%A0%E6%80%A7/">小子样试验的可靠性</a>
+    <h1 class="article-title" itemprop="name">
+      小子样试验的可靠性
     </h1>
   
 
@@ -163,9 +163,41 @@
     <div class="article-entry" itemprop="articleBody">
       
         <p>小子样试验</p>
-        
-          <a class="article-more-a" href="/2021/07/19/%E5%B0%8F%E5%AD%90%E6%A0%B7%E8%AF%95%E9%AA%8C%E7%9A%84%E5%8F%AF%E9%9D%A0%E6%80%A7/#more">more >></a>
-        
+<span id="more"></span>
+
+<h3 id="半经验的可靠性评估方法"><a href="#半经验的可靠性评估方法" class="headerlink" title="半经验的可靠性评估方法"></a>半经验的可靠性评估方法</h3><p>略《机械产品可靠性设计与实验》</p>
+<h3 id="分散系数法"><a href="#分散系数法" class="headerlink" title="分散系数法"></a>分散系数法</h3><h4 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h4><p>由疲劳寿命分布及一定的可靠度和置信度要求给出疲劳寿命分散系数，随着实验条件真实程度的改善、设计技术与工艺技术的改善，分散系数不断降低，对于小子样试验寿命，国内外广泛采用基于参数区间估计的分散系数方法进行可靠性评估。疲劳寿命分散系数SF是试验寿命Nt与安全寿命估计值的比值<br>$$<br>S_F=\frac{N_t}{N_{p,\gamma}}\<br>N_t一般指最小寿命、最大寿命或者中值寿命；N_{p.\gamma}为在一定可靠度P和置信度\gamma下的寿命估计值<br>$$</p>
+<h4 id="数学模型"><a href="#数学模型" class="headerlink" title="数学模型"></a>数学模型</h4><h5 id="对数正态分布"><a href="#对数正态分布" class="headerlink" title="对数正态分布"></a>对数正态分布</h5><ol>
+<li><p>基于中值寿命N50的分散系数<br>$$<br>\begin{aligned}<br>&amp;假设试验寿命服从对数正态分布，母体标准差\sigma已知。其子样子数为n的对数寿命均值\overline{\lg{N}}也为正态分布，即\<br>&amp;\quad \quad \quad \quad \quad \quad \quad \quad \quad \quad \quad \quad \quad \quad \quad \quad \quad \quad \quad \quad \overline{\lg{N}}\sim N(\mu,\frac{\sigma^2}{n})\<br>&amp;式中:(\mu,\sigma)为母体正态分布变量x=\lg{N}的均值和标准差,显然有\<br>&amp;\quad \quad \quad \quad \quad \quad \quad \quad \quad \quad \quad \quad \quad \quad \quad \quad U=\frac{(\lg(N)-\mu)\sqrt{n}}{\sigma}\sim N(0,1)\<br>&amp;对于给定置信度\gamma,变量U满足以下概率式\<br>&amp;\quad \quad \quad \quad \quad \quad \quad \quad \quad \quad \quad \quad \quad \quad \quad \quad \quad \quad \quad \quad P(U\leq u_\gamma)=\gamma\<br>&amp;u_\gamma=\Phi^{-1}(\gamma)为置信度\gamma的标准正态分布的下侧分位数,根据上述概率式,有\<br>&amp;\quad \quad \quad \quad \quad \quad \quad \quad \quad \quad \quad \quad \quad \quad \quad \quad \lg{N}-\hat{\mu}\leq\Phi^{-1}(\gamma)\frac{\sigma}{\sqrt{n}}\<br>&amp;在(-3\sigma,+3\sigma)范围内,对数正态分布的母体标准差可表示为\<br>&amp;\quad \quad \quad \quad \quad \quad \quad \quad \quad \quad \quad \quad \quad \quad \quad \quad \sigma=\frac{(\lg{N_{0.13}}-\lg{N_{99.87}})}{6}\<br>&amp;其中\lg{N_{0.13}}为可靠度R=0.13%的寿命,\lg{N_{99.87}}为可靠度R=99.87%的寿命,对数寿命均值估计量与对数安全寿\<br>&amp;命的关系可表示为\<br>&amp;\quad \quad \quad \quad\quad \quad \quad \quad\quad \quad \quad \quad\quad \quad \quad \quad\quad \quad \quad \quad\hat{\mu}=\lg{N}-u_p\sigma\<br>&amp;u_p为可靠度为p时的上侧分位数;u_p=\Phi^{-1}(1-p)=-\Phi^{-1}(p),综上有如下\<br>&amp;\quad \quad \quad \quad\quad \quad \quad \quad\quad \quad \quad \quad \quad \quad \quad \quad \overline{\lg{N}}-\lg{N_p}\leq\sigma(\frac{\Phi^{-1}(\gamma)}{\sqrt{n}}+\Phi^{-1}(p))\<br>&amp;\quad \quad \quad \quad\quad \quad \quad \quad\quad \quad \quad \quad \quad \quad \quad \quad \quad \quad \quad \quad \frac{N_{50}}{N_p}\leq10^{\sigma(\frac{\Phi^{-1}(\gamma)}{\sqrt{n}}+\Phi^{-1}(p))}\<br>&amp;可以得到基于子样中值寿命的分散系数为S_F=10^{\sigma(\frac{\Phi^{-1}(\gamma)}{\sqrt{n}}+\Phi^{-1}(p))}</p>
+<p>\end{aligned}<br>$$</p>
+</li>
+<li><p>基于最小寿命N1的分散系数<br>$$<br>\begin{aligned}<br>&amp;假设试验寿命服从对数正态分布，母体标准差\sigma已知。对于给定置信度,第k个次序统计量\lg{N_{k}}的转换变量\<br>&amp;U_k=\frac{(lg_{N_k}-\mu)}{\sigma}也为标准正态分布\<br>&amp;对于给定置信度\gamma,变量U_k满足以下概率式\<br>&amp;\quad \quad \quad \quad \quad \quad \quad \quad \quad \quad \quad \quad \quad \quad \quad \quad \quad \quad \quad \quad P(U_k\leq u_\gamma)=\gamma\<br>&amp;u_\gamma=\Phi^{-1}(\gamma)为置信度\gamma的标准正态分布的下侧分位数,根据上述概率式,有\<br>&amp;\quad \quad \quad \quad \quad \quad \quad \quad \quad \quad \quad \quad \quad \quad  \lg{N_{(k)}}-\hat{\mu}\leq\Phi^{-1}(\gamma)\sigma=\Phi^{-1}(F(u_\gamma))\sigma\<br>&amp;最小次序统计量的分布函数为\<br>&amp;\quad \quad \quad \quad \quad \quad \quad \quad \quad \quad \quad \quad \quad \quad \quad \quad F_{N_{(1)}}(u)=1-[1-F(u)]^n=\gamma\<br>&amp;在(-3\sigma,+3\sigma)范围内,对数正态分布的母体标准差可表示为\<br>&amp;\quad \quad \quad \quad \quad \quad \quad \quad \quad \quad \quad \quad \quad \quad \quad \quad \sigma=\frac{(\lg{N_{0.13}}-\lg{N_{99.87}})}{6}\<br>&amp;其中\lg{N_{0.13}}为可靠度R=0.13%的寿命,\lg{N_{99.87}}为可靠度R=99.87%的寿命,对数寿命均值估计量与对数安全寿\<br>&amp;命的关系可表示为\<br>&amp;\quad \quad \quad \quad\quad \quad \quad \quad\quad \quad \quad \quad\quad \quad \quad \quad\quad \quad \quad \quad\hat{\mu}=\lg{N}-u_p\sigma\<br>&amp;u_p为可靠度为p时的上侧分位数;u_p=\Phi^{-1}(1-p)=-\Phi^{-1}(p),综上有如下\<br>&amp;\quad \quad \quad \quad\quad \quad \quad \quad\quad \quad \quad \quad \quad \quad \quad \quad \lg{N_{(1)}}-\lg{N_p}\leq\sigma(\Phi^{-1}(1-\sqrt[n]{1-\gamma})+\Phi^{-1}(p))\<br>&amp;\quad \quad \quad \quad\quad \quad \quad \quad\quad \quad \quad \quad \quad \quad \quad \quad \quad \quad \quad \quad \frac{N_{(1)}}{N_p}\leq10^{\sigma(\Phi^{-1}(1-\sqrt[n]{1-\gamma})+\Phi^{-1}(p))}\<br>&amp;可以得到基于子样最小寿命的分散系数为S_F^{(1)}=10^{\sigma(\Phi^{-1}(1-\sqrt[n]{1-\gamma})+\Phi^{-1}(p))}</p>
+<p>\end{aligned}<br>$$</p>
+</li>
+<li><p>基于最大寿命Nn的分散系数<br>$$<br>\begin{aligned}<br>&amp;假设试验寿命服从对数正态分布，母体标准差\sigma已知。对于给定置信度,第k个次序统计量\lg{N_{k}}的转换变量\<br>&amp;U_k=\frac{(lg_{N_k}-\mu)}{\sigma}也为标准正态分布\<br>&amp;对于给定置信度\gamma,变量U_k满足以下概率式\<br>&amp;\quad \quad \quad \quad \quad \quad \quad \quad \quad \quad \quad \quad \quad \quad \quad \quad \quad \quad \quad \quad P(U_k\leq u_\gamma)=\gamma\<br>&amp;u_\gamma=\Phi^{-1}(\gamma)为置信度\gamma的标准正态分布的下侧分位数,根据上述概率式,有\<br>&amp;\quad \quad \quad \quad \quad \quad \quad \quad \quad \quad \quad \quad \quad \quad  \lg{N_{(k)}}-\hat{\mu}\leq\Phi^{-1}(\gamma)\sigma=\Phi^{-1}(F(u_\gamma))\sigma\<br>&amp;最大次序统计量的分布函数为\<br>&amp;\quad \quad \quad \quad \quad \quad \quad \quad \quad \quad \quad \quad \quad \quad \quad \quad F_{N_{(n)}}(u)=[F(u)]^n=\gamma\<br>&amp;在(-3\sigma,+3\sigma)范围内,对数正态分布的母体标准差可表示为\<br>&amp;\quad \quad \quad \quad \quad \quad \quad \quad \quad \quad \quad \quad \quad \quad \quad \quad \sigma=\frac{(\lg{N_{0.13}}-\lg{N_{99.87}})}{6}\<br>&amp;其中\lg{N_{0.13}}为可靠度R=0.13%的寿命,\lg{N_{99.87}}为可靠度R=99.87%的寿命,对数寿命均值估计量与对数安全寿\<br>&amp;命的关系可表示为\<br>&amp;\quad \quad \quad \quad\quad \quad \quad \quad\quad \quad \quad \quad\quad \quad \quad \quad\quad \quad \quad \quad\hat{\mu}=\lg{N}-u_p\sigma\<br>&amp;u_p为可靠度为p时的上侧分位数;u_p=\Phi^{-1}(1-p)=-\Phi^{-1}(p),综上有如下\<br>&amp;\quad \quad \quad \quad\quad \quad \quad \quad\quad \quad \quad \quad \quad \quad \quad \quad \lg{N_{(n)}}-\lg{N_p}\leq\sigma(\Phi^{-1}(\sqrt[n]{\gamma})+\Phi^{-1}(p))\<br>&amp;\quad \quad \quad \quad\quad \quad \quad \quad\quad \quad \quad \quad \quad \quad \quad \quad \quad \quad \quad \quad \frac{N_{(n)}}{N_p}\leq10^{\sigma(\Phi^{-1}(\sqrt[n]{\gamma})+\Phi^{-1}(p))}\<br>&amp;可以得到基于子样最大寿命的分散系数为S_F^{(n)}=10^{\sigma(\Phi^{-1}(\sqrt[n]{\gamma})+\Phi^{-1}(p))}</p>
+<p>\end{aligned}<br>$$</p>
+</li>
+</ol>
+<h5 id="双参数威布尔分布"><a href="#双参数威布尔分布" class="headerlink" title="双参数威布尔分布"></a>双参数威布尔分布</h5><ol>
+<li><p>基于最小寿命N1的分散系数<br>$$<br>\begin{aligned}<br>&amp;假设试验寿命服从双参数威布尔分布，那么其概率分布函数为\<br>&amp;\quad \quad \quad \quad \quad \quad \quad \quad F(N)=1-e^{-(\frac{N}{\beta})^{\alpha}}\<br>&amp;其中\alpha为形状参数;\beta为特征寿命;最小次序统计量N_{(1)}的分布函数为\<br>&amp;\quad \quad \quad \quad \quad \quad \quad \quad F_{N_{(1)}}(N)=1-[1-F(N)]^n\<br>&amp;所以有F_{N_{(1)}}(N)=1-[e^{-(\frac{N}{\beta})^{\alpha}}]^n=\gamma\<br>&amp;对于给定置信度\gamma，N_{(1)}满足如下概率条件:\<br>&amp;\quad \quad \quad \quad \quad \quad \quad \quad P{N_{(1)}\leq N}=\gamma\<br>&amp;有N_{min}=N_1=[\frac{-\ln(1-\gamma)}{n}]^{\frac{1}{\alpha}}\beta\<br>&amp;对于可靠度为P的疲劳寿命威布尔分布表达式为\<br>&amp;\quad \quad \quad \quad P=e^{-(\frac{N_p}{\beta})^{\alpha}}\Rightarrow N_p=(-\ln P)^{\frac{1}{\alpha}}\beta\<br>&amp;基于最小寿命系数的分散系数为\<br>&amp;\quad \quad \quad \quad \quad \quad \quad \quad S_F^{(1)}=\frac{N_{min}}{N_p}=(\frac{\ln(1-\gamma)}{n.\ln P})^{\frac{1}{\alpha}}<br>\end{aligned}<br>$$</p>
+</li>
+<li><p>基于最大寿命Nn的分散系数<br>$$<br>\begin{aligned}<br>&amp;假设试验寿命服从双参数威布尔分布，那么其概率分布函数为\<br>&amp;\quad \quad \quad \quad \quad \quad \quad \quad F(N)=1-e^{-(\frac{N}{\beta})^{\alpha}}\<br>&amp;其中\alpha为形状参数;\beta为特征寿命;最大次序统计量N_{(1)}的分布函数为\<br>&amp;\quad \quad \quad \quad \quad \quad \quad \quad F_{N_{(n)}}(N)=[F(N)]^n\<br>&amp;所以有F_{N_{(n)}}(N)=[1-e^{-(\frac{N}{\beta})^{\alpha}}]^n=\gamma\<br>&amp;对于给定置信度\gamma，N_{(n)}满足如下概率条件:\<br>&amp;\quad \quad \quad \quad \quad \quad \quad \quad P{N_{(n)}\geq N}=\gamma\<br>&amp;有N_{max}=N_n=[{-\ln(1-\sqrt[n]\gamma)}]^{\frac{1}{\alpha}}\beta\<br>&amp;对于可靠度为P的疲劳寿命威布尔分布表达式为\<br>&amp;\quad \quad \quad \quad P=e^{-(\frac{N_p}{\beta})^{\alpha}}\Rightarrow N_p=(-\ln P)^{\frac{1}{\alpha}}\beta\<br>&amp;基于最小寿命系数的分散系数为\<br>&amp;\quad \quad \quad \quad \quad \quad \quad \quad S_F^{(n)}=\frac{N_{min}}{N_p}=(\frac{\ln(1-\sqrt[n]\gamma)}{\ln P})^{\frac{1}{\alpha}}<br>\end{aligned}<br>$$</p>
+</li>
+</ol>
+<h3 id="Bootstrap方法"><a href="#Bootstrap方法" class="headerlink" title="Bootstrap方法"></a>Bootstrap方法</h3><p>目的：用现有的样本去模仿未知的分布，充分来利用样本本身的信息，对于总体分布不需要假设</p>
+<h4 id="概念"><a href="#概念" class="headerlink" title="概念"></a>概念</h4><p>一般用于样本数大于等于5的试验<br>$$<br>\begin{aligned}<br>&amp;设随机样本X=[x_1,x_2,…,x_n]是独立同分布样本x_i\sim F(x),i=1,2,…,n。R(X,F)为某个预先选定的随机变量,是关于X和F\<br>&amp;的函数。现要求根据观测样本[x_1,x_2,…,x_n]来估计R(X,F)的分布特征，例如:设\theta=\theta(F)为总体分布F的某个参数,F_n是观测样\<br>&amp;本X的经验分布函数,\hat\theta=\hat\theta(F_n)是\theta的估计,记估计误差为R(X,F)=\hat\theta(F_n)-\theta(F)\approx T_n,现在要由观测样本\<br>&amp;X=[x_1,x_2,…,x_n]估计R(X,F)的分布特征,Bootstrap方法的实质就是一个再抽样过程，计算R(X,F)分布特征的基本步骤如下\<br>&amp;1.根据观测样本X=[x_1,x_2,…,x_n]构造经验分布函数F_n\<br>&amp;2.从F_n中抽取样本X^*=[x_1^<em>，x_2^</em>,…,x_n^*],称其为Boostsrap样本\<br>&amp;3.计算相应的Boostsrap统计量R^*(X^*,F_n),其表达式为:R^*(X^*,F_n)=\hat\theta(F^*_n)-\hat\theta(F_n)\approx R_n,R_n为T_n的Boostsrap统计量\<br>&amp;4.重复过程2，3 N次,即可获得Boostsrap统计量R^*(X^*,F_n)的N个可能取值\<br>&amp;5.用R^*(X^*,F_n)的分布去逼近R(X,F)的分布,即用R_n的分布去近似T_n的分布,可得到参数\theta(F)的N个取值,即可统计求出参数\theta的\<br>&amp;分布及其特征值\</p>
+<p>\end{aligned}<br>$$</p>
+<h4 id="均值与方差"><a href="#均值与方差" class="headerlink" title="均值与方差"></a>均值与方差</h4><p>对于总体方差和样本方差<br>$$<br>1.总体方差:\sigma^2=\frac{\sum(X-\mu)^2}{N}\<br>2.样本方差:S^2=\frac{\sum(X-\overline X)^2}{N-1}<br>$$<br>使用Boostsrap方法估算均值和方差<br>$$<br>\begin{aligned}<br>&amp;1.通过以下式子计算样本X的方差S^2和均值\overline x\<br>&amp;\overline x=\frac{1}{n}\sum_{i=1}^{n}x_i,S^2=\frac{1}{n}\sum_{i=1}^{n}(x_i-\overline x)^2\<br>&amp;2.将x_1,x_2,…,x_n按由小到大排列,利用以下式子确定样本X的经验分布F_n,并从F_n中随机抽样N组自助样本:X^{<em>(1)},X^{</em>(2)},…,X^{<em>(n)}\<br>&amp;其中X^{</em>(1)}=(x_1^{<em>(j)},x_2^{</em>(j)},…,x_n^{<em>(j)})\<br>&amp;F_n(x)=<br>\left{\begin{array}{rcl}<br>0\quad \quad &amp;x&lt;x_i\<br>\frac{i}{n}\quad\quad &amp;x_{(i)}\leq x&lt;x_{(i+1)}\<br>1\quad\quad &amp;x\geq x_{(n)}<br>\end{array}\right.\<br>&amp;3.对于每组X^{</em>(j)},由下式可得到相应的自助统计量式R_{n(1)}^{<em>(j)}和R_{n(2)}^{</em>(j)}\<br>&amp;R_{n(1)}^{<em>}=\overline x^</em>-\overline x;R_{n(2)}^{<em>}=\frac{n}{n-1}{S^</em>}^2-\frac{n}{n-1}{S}^2\<br>&amp;4.对每组R_{n(1)}^{<em>(j)}和R_{n(2)}^{</em>(j)}作为T_{n(1)}和T_{n(2)}的估计,可由下式得到\mu和\sigma^2的各一组估计值\hat\mu_1,\hat\mu_2,…\hat\mu_n和\hat\sigma_1^2,\hat\sigma_2^2,…,\hat\sigma_n^2\<br>&amp;计算式:T_{\mu}=\overline x-\mu,T_{\sigma^2}=\frac{n}{n-1}S^2-\sigma^2\<br>&amp;估计值:\hat\mu_j=\overline x-R_{n(1)}^{<em>(f)},\hat\sigma_f^2=\frac{n}{n-1}S^2-R_{n(2)}^{</em>(f)}\<br>&amp;5.由上面的估计值绘制直方图,分别得到关于\mu和\sigma^2的抽样分布,从而可以对其进行估计,其的Boostsrap为\<br>&amp;\hat\mu_j=\frac{1}{N}\sum_{j=1}^{N}\hat\mu_j,\hat\sigma_j^2=\frac{1}{N}\sum_{j=1}^{N}\hat\sigma_j^2</p>
+<p>\end{aligned}<br>$$</p>
+<h3 id="虚拟增广样本评估"><a href="#虚拟增广样本评估" class="headerlink" title="虚拟增广样本评估"></a>虚拟增广样本评估</h3><p>对于样本数为1~3的试验，进行增广，使得它们能够使用Boostsrap方法来评估</p>
+<h4 id="数学模型-1"><a href="#数学模型-1" class="headerlink" title="数学模型"></a>数学模型</h4><p>增广的前提条件</p>
+<ol>
+<li>虚拟增广后的子样均值应与原来的子样均值相等</li>
+<li>虚拟增广后的子样标准差应与类似件的子样标准差相等</li>
+</ol>
+<p>以下为一个例子：n=1的试验，首先我们将试验样本数扩大为13，并假设以往类似件寿命试验估计得到的分布形式为正态分布，可以运用以下近似公式增广原始试验样本<br>$$<br>T=\overline T\pm(a^*(i-1)^b+\xi)\sigma\quad \quad i=1,2,…,\frac{m}{2}\<br>\begin{aligned}<br>&amp;当原始试验样本数为1时，可以近似认为T_0=\overline T;所以\overline T和\sigma已知;T为增广得到的样本;a和b为控制系数,自己设计;\xi为待定系数;\<br>&amp;m为需要增广的样本量的数量,如现在为13-1=12;具体的增广样本如下:\<br>&amp;T_{1,12}=\overline T\mp(a^<em>5^b+\xi)\sigma;T_{2,11}=\overline T\mp(a^</em>4^b+\xi)\sigma;T_{3,10}=\overline T\mp(a^<em>3^b+\xi)\sigma;T_{4,9}=\overline T\mp(a^</em>2^b+\xi)\sigma;\<br>&amp;T_{5,8}=\overline T\mp(a^*+\xi)\sigma;T_{6,17}=\overline T\mp\xi\sigma;T_{13}=\overline T\<br>&amp;\left{\begin{array}{rcl}<br>\overline T &amp;=&amp;\frac{\overline T+\sum_{i=1}^{12}T_i}{13}\<br>\sigma^2 &amp;=&amp;\frac{\sum_{i=1}^{12}(\overline T-T_i)^2+(T_{13}-\overline T)^2}{13-1}<br>\end{array}\right.\<br>&amp;将增广样本带入上述方程组可解得\xi\<br>&amp;\xi=\frac{-2a\sum_{i=1}^{5}i^b+\sqrt{(2a\sum_{i=1}^{5}i^b)^2-24(a^2\sum_{i=1}^{5}i^{2b}-6)}}{12}<br>\end{aligned}<br>$$</p>
+<h3 id="Bayes统计方法"><a href="#Bayes统计方法" class="headerlink" title="Bayes统计方法"></a>Bayes统计方法</h3><h4 id="概述-1"><a href="#概述-1" class="headerlink" title="概述"></a>概述</h4><p>此方法认为θ具有验前概率密度Π(θ)。</p>
+<h4 id="数学描述"><a href="#数学描述" class="headerlink" title="数学描述"></a>数学描述</h4>
       
 
       
@@ -176,16 +208,75 @@
       
 
       
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2021/07/19/%E5%B0%8F%E5%AD%90%E6%A0%B7%E8%AF%95%E9%AA%8C%E7%9A%84%E5%8F%AF%E9%9D%A0%E6%80%A7/">展开全文 >></a>
-        </p>
-      
 
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
+        </div>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=http://example.com/2021/07/19/%E5%B0%8F%E5%AD%90%E6%A0%B7%E8%AF%95%E9%AA%8C%E7%9A%84%E5%8F%AF%E9%9D%A0%E6%80%A7/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
       
       <div class="clearfix"></div>
     </div>
   </div>
 </article>
+
+  
+<nav id="article-nav">
+  
+  
+    <a href="/2021/07/19/%E5%8F%AF%E9%9D%A0%E6%80%A7/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">可靠性</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
 
 <aside class="wrap-side-operation">
     <div class="mod-side-operation">
@@ -200,602 +291,32 @@
         </div>
         
         
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-可靠性" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2021/07/19/%E5%8F%AF%E9%9D%A0%E6%80%A7/">可靠性</a>
-    </h1>
-  
-
-        
-        <a href="/2021/07/19/%E5%8F%AF%E9%9D%A0%E6%80%A7/" class="archive-article-date">
-  	<time datetime="2021-07-19T13:01:16.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-07-19</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>可靠性</p>
-        
-          <a class="article-more-a" href="/2021/07/19/%E5%8F%AF%E9%9D%A0%E6%80%A7/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2021/07/19/%E5%8F%AF%E9%9D%A0%E6%80%A7/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
+        <div class="toc-container tooltip-left">
+            <i class="icon-font icon-category"></i>
+            <div class="tooltip tooltip-east">
+                <span class="tooltip-item">
+                </span>
+                <span class="tooltip-content">
+                    <div class="toc-article">
+                    <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%8D%8A%E7%BB%8F%E9%AA%8C%E7%9A%84%E5%8F%AF%E9%9D%A0%E6%80%A7%E8%AF%84%E4%BC%B0%E6%96%B9%E6%B3%95"><span class="toc-number">1.</span> <span class="toc-text">半经验的可靠性评估方法</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%88%86%E6%95%A3%E7%B3%BB%E6%95%B0%E6%B3%95"><span class="toc-number">2.</span> <span class="toc-text">分散系数法</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%A6%82%E8%BF%B0"><span class="toc-number">2.1.</span> <span class="toc-text">概述</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%95%B0%E5%AD%A6%E6%A8%A1%E5%9E%8B"><span class="toc-number">2.2.</span> <span class="toc-text">数学模型</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#%E5%AF%B9%E6%95%B0%E6%AD%A3%E6%80%81%E5%88%86%E5%B8%83"><span class="toc-number">2.2.1.</span> <span class="toc-text">对数正态分布</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E5%8F%8C%E5%8F%82%E6%95%B0%E5%A8%81%E5%B8%83%E5%B0%94%E5%88%86%E5%B8%83"><span class="toc-number">2.2.2.</span> <span class="toc-text">双参数威布尔分布</span></a></li></ol></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Bootstrap%E6%96%B9%E6%B3%95"><span class="toc-number">3.</span> <span class="toc-text">Bootstrap方法</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%A6%82%E5%BF%B5"><span class="toc-number">3.1.</span> <span class="toc-text">概念</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%9D%87%E5%80%BC%E4%B8%8E%E6%96%B9%E5%B7%AE"><span class="toc-number">3.2.</span> <span class="toc-text">均值与方差</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%99%9A%E6%8B%9F%E5%A2%9E%E5%B9%BF%E6%A0%B7%E6%9C%AC%E8%AF%84%E4%BC%B0"><span class="toc-number">4.</span> <span class="toc-text">虚拟增广样本评估</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%95%B0%E5%AD%A6%E6%A8%A1%E5%9E%8B-1"><span class="toc-number">4.1.</span> <span class="toc-text">数学模型</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Bayes%E7%BB%9F%E8%AE%A1%E6%96%B9%E6%B3%95"><span class="toc-number">5.</span> <span class="toc-text">Bayes统计方法</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%A6%82%E8%BF%B0-1"><span class="toc-number">5.1.</span> <span class="toc-text">概述</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%95%B0%E5%AD%A6%E6%8F%8F%E8%BF%B0"><span class="toc-number">5.2.</span> <span class="toc-text">数学描述</span></a></li></ol></li></ol>
+                    </div>
+                </span>
             </div>
         </div>
         
-        
     </div>
 </aside>
 
 
 
-
-  
-    <article id="post-机器学习-浙大" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2021/06/30/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0-%E6%B5%99%E5%A4%A7/">机器学习-浙大</a>
-    </h1>
-  
-
-        
-        <a href="/2021/06/30/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0-%E6%B5%99%E5%A4%A7/" class="archive-article-date">
-  	<time datetime="2021-06-30T02:42:53.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-06-30</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>浙大机器学习</p>
-        
-          <a class="article-more-a" href="/2021/06/30/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0-%E6%B5%99%E5%A4%A7/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2021/06/30/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0-%E6%B5%99%E5%A4%A7/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-汇编" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2021/06/30/%E6%B1%87%E7%BC%96/">汇编</a>
-    </h1>
-  
-
-        
-        <a href="/2021/06/30/%E6%B1%87%E7%BC%96/" class="archive-article-date">
-  	<time datetime="2021-06-30T02:42:43.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-06-30</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>只是学学不详细</p>
-        
-          <a class="article-more-a" href="/2021/06/30/%E6%B1%87%E7%BC%96/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2021/06/30/%E6%B1%87%E7%BC%96/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-SQL-injection" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2021/06/30/SQL-injection/">SQL-injection</a>
-    </h1>
-  
-
-        
-        <a href="/2021/06/30/SQL-injection/" class="archive-article-date">
-  	<time datetime="2021-06-30T02:42:33.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-06-30</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>《SQL注入攻击与防御》<br>
-        
-          <a class="article-more-a" href="/2021/06/30/SQL-injection/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2021/06/30/SQL-injection/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-python与http" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2021/06/30/python%E4%B8%8Ehttp/">python与http</a>
-    </h1>
-  
-
-        
-        <a href="/2021/06/30/python%E4%B8%8Ehttp/" class="archive-article-date">
-  	<time datetime="2021-06-30T02:42:19.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-06-30</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>python<br>
-        
-          <a class="article-more-a" href="/2021/06/30/python%E4%B8%8Ehttp/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2021/06/30/python%E4%B8%8Ehttp/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-php-study" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2021/06/30/php-study/">php-study</a>
-    </h1>
-  
-
-        
-        <a href="/2021/06/30/php-study/" class="archive-article-date">
-  	<time datetime="2021-06-30T02:42:06.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-06-30</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>处理脚本让浏览器按照指定字符集解析的方法<br>header(‘Content-type:text/html;charset=utf-8’)</p>
-        
-          <a class="article-more-a" href="/2021/06/30/php-study/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2021/06/30/php-study/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-numpy初步学习" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2021/06/30/numpy%E5%88%9D%E6%AD%A5%E5%AD%A6%E4%B9%A0/">numpy初步学习</a>
-    </h1>
-  
-
-        
-        <a href="/2021/06/30/numpy%E5%88%9D%E6%AD%A5%E5%AD%A6%E4%B9%A0/" class="archive-article-date">
-  	<time datetime="2021-06-30T02:41:54.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-06-30</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>numpy</p>
-        
-          <a class="article-more-a" href="/2021/06/30/numpy%E5%88%9D%E6%AD%A5%E5%AD%A6%E4%B9%A0/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2021/06/30/numpy%E5%88%9D%E6%AD%A5%E5%AD%A6%E4%B9%A0/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-mySQLstudy" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2021/06/30/mySQLstudy/">mySQLstudy</a>
-    </h1>
-  
-
-        
-        <a href="/2021/06/30/mySQLstudy/" class="archive-article-date">
-  	<time datetime="2021-06-30T02:41:31.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-06-30</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>MYSQL</p>
-        
-          <a class="article-more-a" href="/2021/06/30/mySQLstudy/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2021/06/30/mySQLstudy/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-Machine-Learning" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2021/06/30/Machine-Learning/">Machine-Learning</a>
-    </h1>
-  
-
-        
-        <a href="/2021/06/30/Machine-Learning/" class="archive-article-date">
-  	<time datetime="2021-06-30T02:41:17.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-06-30</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>Machine Learning in Action</p>
-        
-          <a class="article-more-a" href="/2021/06/30/Machine-Learning/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2021/06/30/Machine-Learning/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
   
   
-    <nav id="page-nav">
-      <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="extend next" rel="next" href="/page/2/">Next &amp;raquo;</a>
-    </nav>
+  
+
+  
+
+  
+
   
 
 
@@ -818,8 +339,8 @@
     <script>
 	var yiliaConfig = {
 		mathjax: false,
-		isHome: true,
-		isPost: false,
+		isHome: false,
+		isPost: true,
 		isArchive: false,
 		isTag: false,
 		isCategory: false,
