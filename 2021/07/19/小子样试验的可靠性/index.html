@@ -16,7 +16,7 @@
 <meta property="og:description" content="小子样试验">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2021-07-19T13:01:41.000Z">
-<meta property="article:modified_time" content="2021-07-19T23:54:41.703Z">
+<meta property="article:modified_time" content="2021-07-22T13:28:41.857Z">
 <meta property="article:author" content="XTG111">
 <meta name="twitter:card" content="summary">
   
@@ -330,7 +330,39 @@ T=\overline T\pm(a^*(i-1)^b+\xi)\sigma\quad \quad i=1,2,...,\frac{m}{2}\\
 &将增广样本带入上述方程组可解得\xi\\
 &\xi=\frac{-2a\sum_{i=1}^{5}i^b+\sqrt{(2a\sum_{i=1}^{5}i^b)^2-24(a^2\sum_{i=1}^{5}i^{2b}-6)}}{12}
 \end{aligned}</script><h3 id="Bayes统计方法"><a href="#Bayes统计方法" class="headerlink" title="Bayes统计方法"></a>Bayes统计方法</h3><h4 id="概述-1"><a href="#概述-1" class="headerlink" title="概述"></a>概述</h4><p>此方法认为θ具有验前概率密度Π(θ)。</p>
-<h4 id="数学描述"><a href="#数学描述" class="headerlink" title="数学描述"></a>数学描述</h4>
+<h4 id="数学描述"><a href="#数学描述" class="headerlink" title="数学描述"></a>数学描述</h4><ol>
+<li>bayes公式<script type="math/tex; mode=display">
+P(A_i|B)=\frac{P(B|A_i)P(A_i)}{\sum_{j}P(B|A_j)P(A_j)}\\
+\begin{aligned}
+&P(A_i)称为先验概率;P(A_i|B)称为A_i的后验概率;P(B|A_i)称为试验结果出现的概率。我们设f(a)为先验概率的密度\\
+&函数,f'(a)为后验概率的密度函数,那么先验概率可表示为f(a)da，后验概率可表示为f'(a)da,上式即可变为\\
+&\quad \quad \quad \quad \quad \quad \quad \quad \quad \quad \quad \quad \quad \quad \quad f'(a)=\frac{P(B|A)f(a)}{\int_{-\infty}^{+\infty}P(B|A)f(a)da}
+\end{aligned}</script></li>
+</ol>
+<h4 id="先验分布"><a href="#先验分布" class="headerlink" title="先验分布"></a>先验分布</h4><h5 id="无信息的先验分布"><a href="#无信息的先验分布" class="headerlink" title="无信息的先验分布"></a>无信息的先验分布</h5><p>除了A的取值范围和A的在总体分布中的地位以外，再也没有关于A的任何信息的分布。所以，在A的取值范围内取任何值都可以，但通常使用Jeffreys规则</p>
+<script type="math/tex; mode=display">
+\begin{aligned}
+&记L(A|x)=\ln\sum_{i=1}^{n}f(x_i|A),其中x=(x_1,x_2,...,x_n)为独立同分布样本,f(x_i|A)为总体的分布密度,令J(\hat A)=-(\frac{\partial^2L}{\partial A^2})_{A=\hat A}\\
+&此处\hat A是A的最大似然估计,则有\pi(A)\propto\sqrt{J(A)};\pi(A)为A的近似无信息验前分布密度
+\end{aligned}</script><h5 id="利用数据确定"><a href="#利用数据确定" class="headerlink" title="利用数据确定"></a>利用数据确定</h5><p>运用x的数据去估计x的边缘分布m(x)的各阶矩，然后再去估计A的验前分布的参数，当x的数据较多时可以使得m(x)的估计较为准确</p>
+<script type="math/tex; mode=display">
+m(x)=\int_{A}f(x|A)\pi(A)dA</script><p>利用上式可以求得Π(A)</p>
+<h5 id="共轭先验分布"><a href="#共轭先验分布" class="headerlink" title="共轭先验分布"></a>共轭先验分布</h5><ol>
+<li>概念<script type="math/tex; mode=display">
+\begin{aligned}
+&设X=(x_1,x_2,...,x_n)为独立同分布样本(i.i.d.),如果A的验前、验后分布具有不变性,即\pi(A)和\pi(A|x)具有同一\\
+&分布形式,则称它们是共轭的,\pi(A)是A的共轭先验分布
+\end{aligned}</script></li>
+</ol>
+<h4 id="验前信息的获得"><a href="#验前信息的获得" class="headerlink" title="验前信息的获得"></a>验前信息的获得</h4><ol>
+<li>单元及分系统试验信息：由于系统的复杂性，可采用金字塔式可靠性评定方法，对单元和分系统进行大量的可靠性试验以弥补系统级试验的不足，这里包括可靠性增长试验及其他性能试验的信息</li>
+<li>仿真试验信息：可靠性仿真试验信息可以为系统可靠性评估提供验前数据</li>
+<li>相似系统信息：相关型号的系统可以为可靠性评估提供验前信息，但是必须清楚相关型号系统之间的可靠性的关系，如果是可以交换的，就可以直接使用，否则需要进行信息的折算</li>
+<li>系统或单元在不同环境下的试验信息：为了考核系统的环境适应性或进行加速寿命试验，系统经常需要在不同环境下进行可靠性试验，试验要求各组成单元或系统的失效机理不变，运用此类信息需要研究利用环境因子或加速因子进行折算</li>
+<li>专家意见以及工程经验</li>
+<li>历史信息</li>
+</ol>
+
       
 
       
@@ -440,7 +472,7 @@ T=\overline T\pm(a^*(i-1)^b+\xi)\sigma\quad \quad i=1,2,...,\frac{m}{2}\\
                 </span>
                 <span class="tooltip-content">
                     <div class="toc-article">
-                    <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%8D%8A%E7%BB%8F%E9%AA%8C%E7%9A%84%E5%8F%AF%E9%9D%A0%E6%80%A7%E8%AF%84%E4%BC%B0%E6%96%B9%E6%B3%95"><span class="toc-number">1.</span> <span class="toc-text">半经验的可靠性评估方法</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%88%86%E6%95%A3%E7%B3%BB%E6%95%B0%E6%B3%95"><span class="toc-number">2.</span> <span class="toc-text">分散系数法</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%A6%82%E8%BF%B0"><span class="toc-number">2.1.</span> <span class="toc-text">概述</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%95%B0%E5%AD%A6%E6%A8%A1%E5%9E%8B"><span class="toc-number">2.2.</span> <span class="toc-text">数学模型</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#%E5%AF%B9%E6%95%B0%E6%AD%A3%E6%80%81%E5%88%86%E5%B8%83"><span class="toc-number">2.2.1.</span> <span class="toc-text">对数正态分布</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E5%8F%8C%E5%8F%82%E6%95%B0%E5%A8%81%E5%B8%83%E5%B0%94%E5%88%86%E5%B8%83"><span class="toc-number">2.2.2.</span> <span class="toc-text">双参数威布尔分布</span></a></li></ol></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Bootstrap%E6%96%B9%E6%B3%95"><span class="toc-number">3.</span> <span class="toc-text">Bootstrap方法</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%A6%82%E5%BF%B5"><span class="toc-number">3.1.</span> <span class="toc-text">概念</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%9D%87%E5%80%BC%E4%B8%8E%E6%96%B9%E5%B7%AE"><span class="toc-number">3.2.</span> <span class="toc-text">均值与方差</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%99%9A%E6%8B%9F%E5%A2%9E%E5%B9%BF%E6%A0%B7%E6%9C%AC%E8%AF%84%E4%BC%B0"><span class="toc-number">4.</span> <span class="toc-text">虚拟增广样本评估</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%95%B0%E5%AD%A6%E6%A8%A1%E5%9E%8B-1"><span class="toc-number">4.1.</span> <span class="toc-text">数学模型</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Bayes%E7%BB%9F%E8%AE%A1%E6%96%B9%E6%B3%95"><span class="toc-number">5.</span> <span class="toc-text">Bayes统计方法</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%A6%82%E8%BF%B0-1"><span class="toc-number">5.1.</span> <span class="toc-text">概述</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%95%B0%E5%AD%A6%E6%8F%8F%E8%BF%B0"><span class="toc-number">5.2.</span> <span class="toc-text">数学描述</span></a></li></ol></li></ol>
+                    <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%8D%8A%E7%BB%8F%E9%AA%8C%E7%9A%84%E5%8F%AF%E9%9D%A0%E6%80%A7%E8%AF%84%E4%BC%B0%E6%96%B9%E6%B3%95"><span class="toc-number">1.</span> <span class="toc-text">半经验的可靠性评估方法</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%88%86%E6%95%A3%E7%B3%BB%E6%95%B0%E6%B3%95"><span class="toc-number">2.</span> <span class="toc-text">分散系数法</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%A6%82%E8%BF%B0"><span class="toc-number">2.1.</span> <span class="toc-text">概述</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%95%B0%E5%AD%A6%E6%A8%A1%E5%9E%8B"><span class="toc-number">2.2.</span> <span class="toc-text">数学模型</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#%E5%AF%B9%E6%95%B0%E6%AD%A3%E6%80%81%E5%88%86%E5%B8%83"><span class="toc-number">2.2.1.</span> <span class="toc-text">对数正态分布</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E5%8F%8C%E5%8F%82%E6%95%B0%E5%A8%81%E5%B8%83%E5%B0%94%E5%88%86%E5%B8%83"><span class="toc-number">2.2.2.</span> <span class="toc-text">双参数威布尔分布</span></a></li></ol></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Bootstrap%E6%96%B9%E6%B3%95"><span class="toc-number">3.</span> <span class="toc-text">Bootstrap方法</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%A6%82%E5%BF%B5"><span class="toc-number">3.1.</span> <span class="toc-text">概念</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%9D%87%E5%80%BC%E4%B8%8E%E6%96%B9%E5%B7%AE"><span class="toc-number">3.2.</span> <span class="toc-text">均值与方差</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%99%9A%E6%8B%9F%E5%A2%9E%E5%B9%BF%E6%A0%B7%E6%9C%AC%E8%AF%84%E4%BC%B0"><span class="toc-number">4.</span> <span class="toc-text">虚拟增广样本评估</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%95%B0%E5%AD%A6%E6%A8%A1%E5%9E%8B-1"><span class="toc-number">4.1.</span> <span class="toc-text">数学模型</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Bayes%E7%BB%9F%E8%AE%A1%E6%96%B9%E6%B3%95"><span class="toc-number">5.</span> <span class="toc-text">Bayes统计方法</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%A6%82%E8%BF%B0-1"><span class="toc-number">5.1.</span> <span class="toc-text">概述</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%95%B0%E5%AD%A6%E6%8F%8F%E8%BF%B0"><span class="toc-number">5.2.</span> <span class="toc-text">数学描述</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%85%88%E9%AA%8C%E5%88%86%E5%B8%83"><span class="toc-number">5.3.</span> <span class="toc-text">先验分布</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#%E6%97%A0%E4%BF%A1%E6%81%AF%E7%9A%84%E5%85%88%E9%AA%8C%E5%88%86%E5%B8%83"><span class="toc-number">5.3.1.</span> <span class="toc-text">无信息的先验分布</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E5%88%A9%E7%94%A8%E6%95%B0%E6%8D%AE%E7%A1%AE%E5%AE%9A"><span class="toc-number">5.3.2.</span> <span class="toc-text">利用数据确定</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E5%85%B1%E8%BD%AD%E5%85%88%E9%AA%8C%E5%88%86%E5%B8%83"><span class="toc-number">5.3.3.</span> <span class="toc-text">共轭先验分布</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E9%AA%8C%E5%89%8D%E4%BF%A1%E6%81%AF%E7%9A%84%E8%8E%B7%E5%BE%97"><span class="toc-number">5.4.</span> <span class="toc-text">验前信息的获得</span></a></li></ol></li></ol>
                     </div>
                 </span>
             </div>
