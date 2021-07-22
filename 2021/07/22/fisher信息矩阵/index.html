@@ -16,7 +16,7 @@
 <meta property="og:description" content="fisher信息矩阵的推导">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2021-07-22T12:44:55.000Z">
-<meta property="article:modified_time" content="2021-07-22T13:28:55.828Z">
+<meta property="article:modified_time" content="2021-07-22T13:31:07.642Z">
 <meta property="article:author" content="XTG111">
 <meta name="twitter:card" content="summary">
   
@@ -164,11 +164,10 @@
       
         <p>fisher信息矩阵的推导</p>
 <span id="more"></span>
-<h3 id="一、"><a href="#一、" class="headerlink" title="一、"></a>一、</h3><script type="math/tex; mode=display">
-qeqwe</script><script type="math/tex; mode=display">
+<h5 id="如下"><a href="#如下" class="headerlink" title="如下"></a>如下</h5><script type="math/tex; mode=display">
 \begin{aligned}
 &假设有概率密度函数f(x|\theta),x为变量,\theta为目标参数,那么有对数似然函数\ln(x|\theta)=\ln f(x|\theta),对定义fisher信息矩阵为I(\theta)\\
-&\quad \quad \quad \quad \quad \quad \quad \quad \quad \quad \quad \quad \quad \quad \quad I(\theta)=Var(ln'(x|\theta))=E(ln'(x|\theta)^2)-[E(ln'(x|\theta))]^2\\
+&\quad \quad \quad \quad \quad \quad \quad \quad \quad \quad \quad \quad \quad I(\theta)=Var(ln'(x|\theta))=E(ln'(x|\theta)^2)-[E(ln'(x|\theta))]^2\\
 &对于E(ln'(x|\theta))有\\
 &\begin{aligned}
 ln'(x|\theta) &=\frac{\partial\ln f(x|\theta)}{\partial\theta}\\
@@ -178,7 +177,7 @@ E(ln'(x|\theta)) &=\int ln'(x|\theta)f(x|\theta)dx\\
 &=\frac{\partial\int f(x|\theta)dx}{\partial\theta}\\
 &=0
 &\end{aligned}\\
-&所以有I(\theta)=E(ln'(x|\theta)^2)\\
+&所以有I(\theta)=E(ln'(x|\theta)^2)\\\\
 &对于E(ln'(x|\theta)^2)有\\
 &\begin{aligned}
 E(ln'(x|\theta)^2) &=\int ln'(x|\theta)^2f(x|\theta)dx\\
@@ -302,7 +301,7 @@ E[ln''(x|\theta)]&=E[\frac{f''(x|\theta)}{f(x|\theta)}]-E([ln'(x|\theta)]^2)\\
                 </span>
                 <span class="tooltip-content">
                     <div class="toc-article">
-                    <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%80%E3%80%81"><span class="toc-number">1.</span> <span class="toc-text">一、</span></a></li></ol>
+                    <ol class="toc"><li class="toc-item toc-level-5"><a class="toc-link" href="#%E5%A6%82%E4%B8%8B"><span class="toc-number">1.</span> <span class="toc-text">如下</span></a></li></ol>
                     </div>
                 </span>
             </div>
